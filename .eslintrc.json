@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": ["testing-library", "prettier"],
+  "overrides": [
+    {
+      "files": ["!*.test.*"],
+      "extends": ["airbnb-base", "prettier"],
+      "rules": {
+        "quotes": ["error", "double"],
+        "linebreak-style": 0,
+        "import/extensions": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/prefer-default-export": 0
+      }
+    },
+    {
+      "files": ["*.test.*"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "endOfLine": 0
+  }
+}

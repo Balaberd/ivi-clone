@@ -1,0 +1,73 @@
+@import "../../../../shared/index.scss";
+
+.headerMobile {
+  width: 100%;
+  height: 48px;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+
+  backdrop-filter: blur(8px);
+  background-color: rgba(31, 27, 46, 0.88);
+
+  display: none;
+
+  @media (max-width: 1160px) {
+    display: flex;
+  }
+}
+
+.button {
+  color: $color-sofia;
+  width: 100%;
+  max-width: 120px;
+  margin: 0 26px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  @include set-font(10px, 12px, 500);
+  @extend %template-link;
+}
+
+.icon {
+  &::before {
+    font-size: 20px;
+  }
+
+  &_ivi::before {
+    font-family: IconFont;
+    font-size: 20px;
+    content: "\E22B";
+  }
+  &_catalog::before {
+    font-family: IconFont;
+    font-size: 20px;
+    content: "\E07C";
+  }
+  &_search::before {
+    font-family: IconFont;
+    font-size: 20px;
+    content: "\E342";
+  }
+  &_tv::before {
+    font-family: IconFont;
+    font-size: 20px;
+    content: "\E3AE";
+  }
+  &_add::before {
+    font-family: IconFont;
+    font-size: 20px;
+    content: "\E26F";
+  }
+}

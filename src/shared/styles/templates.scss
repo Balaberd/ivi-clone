@@ -1,0 +1,21 @@
+@import "./vars.scss";
+
+%template-container {
+  width: $width-container;
+  margin: 0 auto;
+
+  @media (max-width: $width-container) {
+    width: 100%;
+    padding: 0 32px;
+  }
+}
+
+%template-link {
+  color: $color-sofia;
+  transition: 0.2s;
+  opacity: $opacity-tesa;
+
+  &:hover {
+    opacity: $opacity-imi;
+  }
+}

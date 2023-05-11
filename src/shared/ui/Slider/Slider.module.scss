@@ -1,0 +1,23 @@
+@import "@/shared/index.scss";
+
+.slider {
+  position: relative;
+}
+
+.title {
+  @include set-font(24px, 28px, 700);
+  color: $color-sofia;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sliderWrapper {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.unvisible {
+  visibility: hidden;
+}

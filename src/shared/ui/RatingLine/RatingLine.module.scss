@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.lineWrapper {
+  width: 80%;
+  height: 4px;
+
+  border-radius: 2px;
+
+  background-color: $color-ratingLine-Background;
+}
+
+.ratingLine {
+  height: 100%;
+  width: 25%;
+  border-radius: 2px;
+
+  background-color: $color-madrid;
+}

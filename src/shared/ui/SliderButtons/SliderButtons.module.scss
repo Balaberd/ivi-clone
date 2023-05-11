@@ -1,0 +1,51 @@
+@import "../../index.scss";
+
+.button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40px;
+
+  font-family: IconFont;
+  color: $color-sofia;
+  opacity: $opacity-hemza;
+
+  font-size: 31px;
+
+  transition: 0.4s;
+
+  cursor: pointer;
+  z-index: 3;
+
+  &:hover {
+    opacity: $opacity-imi;
+  }
+  &:active {
+    &::before {
+      transform: scale(0.8);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+  }
+}
+
+.button_prev {
+  left: -40px;
+
+  &::before {
+    content: "\E040";
+    right: 8px;
+  }
+}
+
+.button_next {
+  right: -40px;
+
+  &::before {
+    content: "\E047";
+    left: 8px;
+  }
+}

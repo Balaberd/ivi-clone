@@ -1,0 +1,24 @@
+@import "@/shared/index.scss";
+
+.rating {
+  color: $color-axum;
+  @include set-font(13px, 16px, 400);
+}
+
+.numbers {
+  margin-bottom: 4px;
+  display: flex;
+  color: $color-sofia;
+
+  &__firstNum {
+    @include set-font(24px, 28px, 700);
+  }
+
+  &__secondNum {
+    @include set-font(20px, 24px, 700);
+  }
+}
+
+.ratingLine {
+  margin-top: 4px;
+}

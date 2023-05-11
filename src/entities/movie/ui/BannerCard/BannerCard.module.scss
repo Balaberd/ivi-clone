@@ -1,0 +1,36 @@
+@import "@/shared/index.scss";
+
+.poster {
+  width: 100%;
+  aspect-ratio: 1/0.4251;
+  height: calc(100% / aspect-ratio);
+  border-radius: 20px;
+}
+
+.content {
+  width: 40%;
+  height: 100%;
+  padding: 3%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  gap: 20px;
+
+  color: $color-sofia;
+  @include set-font(15px, 22px, 400);
+}
+
+.title {
+  @include set-font(56px, 56px, 700);
+}
+
+.description {
+}
+
+.button {
+  background-color: $color-madrid;
+  border-radius: 8px;
+  padding: 9px 15px;
+}

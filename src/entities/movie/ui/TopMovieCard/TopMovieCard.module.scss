@@ -1,0 +1,62 @@
+@import "../../../../shared/index.scss";
+
+.poster {
+  width: 100%;
+  aspect-ratio: 0.4903;
+  height: calc(100% / aspect-ratio);
+  margin-bottom: calc(aspect-ratio);
+
+  margin-bottom: 16%;
+
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  display: flex;
+  align-items: end;
+
+  transition: 0.4s;
+
+  &:hover {
+    transform: scale(1.04) translateY(0);
+  }
+}
+
+.content {
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-sofia;
+
+  background-image: linear-gradient(0deg, #100e19, rgba(16, 14, 25, 0));
+}
+
+.title {
+  @include set-font(28px, 30px, 500);
+}
+
+.imageWrapper {
+  width: 48px;
+  height: 66px;
+  position: absolute;
+  top: 86%;
+  right: calc(50% - 24px);
+
+  @media (max-width: 745px) {
+    width: 32px;
+    height: 44px;
+  }
+}
+
+.poster:hover + .imageWrapper {
+  animation: beat 0.75s infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.2) translateY(-8px);
+  }
+}

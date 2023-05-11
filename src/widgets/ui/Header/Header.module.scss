@@ -1,0 +1,96 @@
+@import "@/shared/index.scss";
+
+.header {
+  @extend %template-container;
+  display: flex;
+  align-items: center;
+  height: 72px;
+}
+
+.link {
+  @extend %template-link;
+  @include set-font(15px, 20px, 500);
+  white-space: nowrap;
+
+  &_bell {
+    padding-left: 12px;
+  }
+
+  &_auth {
+    padding-left: 12px;
+  }
+}
+
+.logoBlock {
+  width: 66px;
+  height: 48px;
+}
+
+.navigate {
+  .navigateList {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+
+    & > li {
+      margin-left: 16px;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    display: none;
+  }
+}
+
+.wideBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  & > * {
+    margin-right: 20px;
+  }
+
+  .subscriptionButton {
+    color: $color-sofia;
+    border-radius: 8px;
+    padding: 7px 11px;
+    background-color: $color-madrid;
+    background-image: linear-gradient(270deg, $color-madrid, #c447ff);
+    @include set-font(13px, 16px, 500);
+  }
+}
+
+.icon {
+  font-family: IconFont;
+  font-size: 20px;
+
+  &_search {
+    display: flex;
+    gap: 8px;
+    display: inline;
+
+    &::before {
+      content: "\E341";
+    }
+  }
+
+  &_bell {
+    padding: 12px;
+
+    &::before {
+      content: "\E2FE";
+    }
+  }
+
+  &_auth {
+    padding: 12px;
+
+    border: 1px solid $color-sofia;
+    border-radius: 8px;
+    &::before {
+      content: "\E051";
+    }
+  }
+}

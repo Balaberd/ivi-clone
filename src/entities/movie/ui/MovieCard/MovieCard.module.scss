@@ -1,0 +1,24 @@
+@import "@/shared/index.scss";
+
+.movieCard {
+  color: $color-havana;
+
+  &:hover {
+    .title {
+      color: $color-sofia;
+    }
+    .movieProperties {
+      opacity: $opacity-imi;
+    }
+    .poster {
+      transform: scale(1.04) translateY(0);
+    }
+  }
+}
+
+.poster {
+  transition: 0.4s;
+  width: 100%;
+  aspect-ratio: 1/1.535;
+  height: calc(100% / aspect-ratio);
+}

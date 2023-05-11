@@ -1,0 +1,27 @@
+@import "@/shared/index.scss";
+
+.card {
+  &:hover {
+    .title {
+      color: $color-sofia;
+    }
+  }
+}
+
+.titleBlock {
+  margin-top: 8px;
+
+  .title {
+    transition: 0.4s;
+    overflow: hidden;
+    color: $color-tbilisi;
+    @include set-font(15px, 20px, 500);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .subtitle {
+    color: $color-axum;
+    @include set-font(13px, 16px, 500);
+  }
+}

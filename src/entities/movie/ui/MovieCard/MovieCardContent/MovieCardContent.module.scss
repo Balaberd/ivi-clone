@@ -1,0 +1,48 @@
+@import "@/shared/index.scss";
+
+.movieCardContent {
+  width: 100%;
+  height: 100%;
+  padding: 15%;
+
+  opacity: 0;
+
+  transition: 0.4s;
+
+  background-color: $color-transparentBlack;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  position: relative;
+
+  .actionBlock {
+    position: absolute;
+    right: 15%;
+    top: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .movieInfo {
+    color: $color-tbilisi;
+    @include set-font(13px, 16px, 400);
+
+    .description {
+      margin-top: 4px;
+    }
+
+    .info {
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .duration {
+      display: inline-block;
+      margin-top: 4px;
+    }
+  }
+}

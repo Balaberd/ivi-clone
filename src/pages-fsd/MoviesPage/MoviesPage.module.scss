@@ -1,0 +1,5 @@
+@import "./../../shared/index.scss";
+
+.moviesPage {
+  @extend %template-container;
+}
