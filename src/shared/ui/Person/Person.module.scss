@@ -1,0 +1,28 @@
+@import "../../styles/vars.scss";
+
+.container {
+  margin-top: 10px; // нужен только для демо
+  width: 110px;
+}
+
+.photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 1000px;
+}
+
+.name {
+  padding-top: 10px;
+  color: $color-santiago;
+  font-size: 16px;
+  font-family: iviSans;
+  font-weight: 500;
+}
+
+.role {
+  padding-top: 10px;
+  font-size: 14px;
+  color: $color-dublin;
+  font-family: iviSans;
+  font-weight: 400;
+}

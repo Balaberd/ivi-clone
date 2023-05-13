@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/widgets";
+import { MyFooter, Header } from "@/widgets";
 import Head from "next/head";
 import { FC, ReactElement } from "react";
 
@@ -20,7 +20,7 @@ export const Layout: FC<Props> = ({ children }) => (
     <main>
       <Header />
       {children}
-      <Footer />
+      <MyFooter />
     </main>
   </>
 );

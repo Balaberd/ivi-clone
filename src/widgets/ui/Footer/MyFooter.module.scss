@@ -1,0 +1,277 @@
+@import "../../../shared/styles/vars.scss";
+
+@mixin centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator {
+  max-width: 100%;
+  border: 1px solid hsla(0, 0%, 100%, 0.16);
+}
+
+.topSeparator {
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+.bottomSeparator {
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+// ограничения по ширине
+.container {
+  max-width: 1216px;
+  margin: 0 auto;
+
+  font-family: iviSans, Arial, Helvetica, sans-serif;
+}
+
+// для layout
+.wrapper {
+  display: flex;
+  gap: 20px;
+
+  // margin: 50px 0;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.about,
+.sections,
+.supportBlock,
+.watch {
+  width: 286px;
+}
+
+.block h1,
+.supportBlock h1 {
+  // color: var(--color-sofia);
+  color: $color-sofia;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.block a,
+.block p,
+.supportBlock p {
+  font-size: 15px;
+  line-height: 20px;
+  color: #ffffff7a;
+  transition: ease-in-out 80ms;
+  margin-bottom: 10px;
+}
+
+.block a:last-child,
+.block p:last-child {
+  margin-bottom: 0;
+}
+
+.block a:hover {
+  color: $color-sofia;
+
+  transition: ease-in-out 80ms;
+}
+
+.activate {
+  font-weight: 500;
+  background: -webkit-linear-gradient(left, $color-madrid, $color-york);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.supportBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.textInChat {
+  margin: 1rem 0; // для демо
+
+  background-color: $color-varna;
+  color: $color-sofia;
+
+  width: 196px;
+  height: 40px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-radius: 8px;
+
+  @include centerContent();
+
+  transition: 0.2s;
+}
+
+.supportIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.mail,
+.phone,
+.megaphone {
+  font-family: IconFont;
+}
+
+.mail::before {
+  content: "\E0D8";
+  color: $color-sofia;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.phone::before {
+  content: "\E06A";
+  color: $color-sofia;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.ask {
+  color: $color-sofia;
+  font-size: 16px;
+
+  margin-top: 30px;
+
+  transition: ease-in-out 0.4s;
+}
+//
+.megaphone {
+  background: radial-gradient($color-york, darken($color-york, 10%));
+  box-shadow: 0 0 104px $color-york;
+
+  height: 104px;
+  width: 104px;
+  border-radius: 20px;
+
+  position: relative;
+  @include centerContent();
+}
+
+@mixin megaphone {
+  color: $color-sofia;
+  font-size: 56px;
+  line-height: 56px;
+}
+
+.megaphone::before {
+  content: "\E273";
+  position: absolute;
+
+  @include megaphone();
+}
+
+.megaphone::after {
+  content: "\E274";
+  position: absolute;
+
+  @include megaphone();
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+}
+
+.watch p {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.mailCall,
+.socials {
+  height: 40px;
+  width: 40px;
+
+  border-radius: 8px;
+  font-weight: 500;
+
+  color: $color-sofia;
+
+  background-color: $color-varna;
+  @include centerContent();
+
+  transition: 0.2s;
+}
+
+.socials {
+  border-radius: 800px;
+}
+
+.devicesNSocials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deviceText p {
+  color: hsla(0, 0%, 100%, 0.72);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  //overflow: hidden;
+  //text-overflow: ellipsis;
+  //white-space: nowrap;
+}
+
+.deviceText h1 {
+  color: $color-sofia;
+  font-size: 15px;
+  font-weight: 500;
+  height: 20px;
+  //overflow: hidden;
+  //text-overflow: ellipsis;
+  //white-space: nowrap;
+}
+
+.devicesBlock {
+  display: flex;
+  gap: 12px;
+}
+
+.devices {
+  display: flex;
+  margin: 1rem 0; // demo
+
+  color: $color-sofia;
+  padding: 8px 20px;
+  border-radius: 8px;
+
+  font-weight: 500;
+
+  background-color: $color-varna;
+  @include centerContent();
+
+  transition: 0.2s;
+}
+
+.socialsBlock {
+  display: flex;
+  gap: 12px;
+}
+
+.copyright {
+  color: hsla(0, 0%, 100%, 0.48);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.mailCall:hover,
+.socials:hover,
+.textInChat:hover,
+.thirtyDay:hover,
+.devices:hover {
+  background-color: $color-berbera;
+}
