@@ -3,6 +3,7 @@ import Link from "next/link";
 import cn from "classnames";
 import { BannerSlider, MovieSlider, TopMovieSlider } from "@/widgets";
 import Image from "next/image";
+import { PersonSlider } from "@/widgets/ui/PersonSlider/PersonSlider";
 import styles from "./MainPage.module.scss";
 
 export const MainPage: FC = () => (
@@ -35,6 +36,9 @@ export const MainPage: FC = () => (
           Активировать сертификат
         </Link>
       </section>
+      <PersonSlider />
+      <PersonSlider isSlider={false} />
+
       <MovieSlider />
       <TopMovieSlider />
     </div>

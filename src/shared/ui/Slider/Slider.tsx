@@ -15,12 +15,16 @@ interface Props {
   spaceBetween?: number;
   wrapperClass?: string;
   title?: ReactElement | string;
+  disabled?: boolean;
+  buttonsClassName?: string;
 }
 
 export const Slider: FC<Props> = ({
   children,
   title = "TITLE",
   wrapperClass,
+  disabled = false,
+  buttonsClassName,
   ...props
 }) => {
   const swiperRef = useRef<SwiperType>();
@@ -30,14 +34,21 @@ export const Slider: FC<Props> = ({
   return (
     <div className={styles.slider}>
       <div className={styles.title}>{title}</div>
-      <SliderButtons
-        swiperRef={swiperRef}
-        prev={prevButtonRef}
-        next={nextButtonRef}
-      />
+      {!disabled && (
+        <SliderButtons
+          swiperRef={swiperRef}
+          prev={prevButtonRef}
+          next={nextButtonRef}
+          nextButtonClassName={buttonsClassName}
+          prevButtonClassName={buttonsClassName}
+        />
+      )}
       <Swiper
         modules={[Navigation]}
         speed={1000}
+        allowSlideNext={!disabled}
+        allowSlidePrev={!disabled}
+        spaceBetween={24}
         wrapperClass={cn(styles.sliderWrapper, wrapperClass)}
         {...props}
         navigation={{
