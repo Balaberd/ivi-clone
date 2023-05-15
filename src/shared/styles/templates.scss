@@ -20,17 +20,6 @@
   }
 }
 
-%template-color-button {
-  transition: 0.2s;
-
-  color: $color-axum;
-  background-color: $color-varna;
-
-  &:hover {
-    background-color: $color-harn;
-  }
-}
-
 %template-link-button {
   display: flex;
   justify-content: center;
@@ -45,5 +34,16 @@
   transition: 0.2s;
   &:hover {
     background-color: $color-berbera;
+  }
+}
+
+%template-color-button {
+  transition: 0.2s;
+
+  color: $color-axum;
+  background-color: $color-varna;
+
+  &:hover {
+    background-color: $color-harn;
   }
 }
