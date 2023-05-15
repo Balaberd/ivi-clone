@@ -19,6 +19,8 @@ export const Poster: FC<Props> = ({
 }) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
+  const prefix = "https://";
+
   return (
     <div className={cn(styles.poster, classNames)} data-testid="custom-element">
       {!isImageLoaded && (
@@ -26,7 +28,7 @@ export const Poster: FC<Props> = ({
       )}
       <Image
         className={styles.image}
-        src={imageUrl}
+        src={imageUrl.startsWith(prefix) ? imageUrl : prefix + imageUrl}
         alt={`постер к фильму/актеру ${title}`}
         fill
         onLoad={() => setIsImageLoaded(true)}

@@ -2,4 +2,14 @@
 
 .moviesPage {
   @extend %template-container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoBlock {
+  & h2 {
+    @include set-font(40px, 44px, 700);
+  }
 }

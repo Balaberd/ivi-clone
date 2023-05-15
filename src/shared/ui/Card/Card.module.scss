@@ -23,5 +23,6 @@
   .subtitle {
     color: $color-axum;
     @include set-font(13px, 16px, 500);
+    white-space: pre-wrap;
   }
 }

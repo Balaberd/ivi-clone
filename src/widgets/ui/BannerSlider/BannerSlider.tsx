@@ -5,7 +5,7 @@ import cn from "classnames";
 import "swiper/css";
 import { SliderButtons } from "@/shared/ui/SliderButtons/SliderButtons";
 import { BannerCard } from "@/entities";
-import { useGetBannerDataQuery } from "@/app-fsd/model/movie.api";
+import { useGetMoviesPromoQuery } from "@/app-fsd/model/movie.api";
 import styles from "./BannerSlider.module.scss";
 
 export const BannerSlider: FC = () => {
@@ -13,15 +13,15 @@ export const BannerSlider: FC = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
 
-  const { data } = useGetBannerDataQuery(6);
+  const { data } = useGetMoviesPromoQuery(6);
 
   let bannerData;
   if (data) {
-    bannerData = data.map(({ id, name, avatars, text }) => ({
+    bannerData = data.map(({ id, name, promo, text }) => ({
       id,
       title: name,
       description: text,
-      imageUrl: avatars,
+      imageUrl: promo,
     }));
   }
 

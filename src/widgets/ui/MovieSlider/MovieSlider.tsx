@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Slider } from "@/shared/ui/Slider/Slider";
 import { MovieCard } from "@/entities";
-import { useGetMovieSliderQuery } from "@/app-fsd/model/movie.api";
+import { useGetMovieCollectionQuery } from "@/app-fsd/model/movie.api";
+import { TGenre } from "@/app-fsd/model/movie.types";
 
 const breakpoints = {
   1280: { slidesPerView: 7, slidesPerGroup: 6 },
@@ -11,13 +12,48 @@ const breakpoints = {
   0: { slidesPerView: 3, slidesPerGroup: 2 },
 };
 
-export const MovieSlider: FC = () => {
-  const { data } = useGetMovieSliderQuery(5);
+interface Props {
+  genre: TGenre;
+}
+
+const GENRE_TRANSLETE_MAP = {
+  sport: "Спорт",
+  biography: "Биорграфии",
+  western: "Вестерны",
+  crime: "Криминал",
+  military: "Военные",
+  horror: "Ужасы",
+  detective: "Детективы",
+  family: "Семейные",
+  fantasy: "Фэнтези",
+  fantastic: "Фантастика",
+  melodramas: "Мелодрамы",
+  foreign: "Зарубежные",
+  adventures: "Приключенческие",
+  thriller: "Триллеры",
+  comedy: "Комедии",
+  drama: "Драмы",
+};
+
+export const MovieSlider: FC<Props> = ({ genre }) => {
+  const { data, isLoading } = useGetMovieCollectionQuery(genre);
 
   let movies;
+  if (!isLoading) {
+    movies = new Array(10).fill({
+      id: "",
+      rating: 0,
+      years: "",
+      genre: "",
+      country: "",
+      title: "",
+      durations: "",
+    });
+  }
+
   if (data) {
     movies = data.map(
-      ({ id, avatars, rating, years, genre, country, name, durations }) => ({
+      ({ id, avatars, name, rating, years, durations, country, genre }) => ({
         id,
         imageUrl: avatars,
         rating,
@@ -31,7 +67,11 @@ export const MovieSlider: FC = () => {
   }
 
   return (
-    <Slider breakpoints={breakpoints} spaceBetween={24}>
+    <Slider
+      title={GENRE_TRANSLETE_MAP[genre]}
+      breakpoints={breakpoints}
+      spaceBetween={24}
+    >
       {movies && movies.map((el, ind) => <MovieCard key={ind} {...el} />)}
     </Slider>
   );

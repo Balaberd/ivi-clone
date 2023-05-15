@@ -8,19 +8,25 @@ import "swiper/css/navigation";
 import { SliderButtons } from "../SliderButtons/SliderButtons";
 
 interface Props {
-  children: ReactElement[];
+  children?: ReactElement[];
   slidesPerView?: number | "auto";
   slidesPerGroup?: number;
   breakpoints?: any;
   spaceBetween?: number;
   wrapperClass?: string;
   title?: ReactElement | string;
+  disabled?: boolean;
+  buttonsClassName?: string;
+  slideClassName?: string;
 }
 
 export const Slider: FC<Props> = ({
   children,
-  title = "TITLE",
+  title,
   wrapperClass,
+  slideClassName,
+  disabled = false,
+  buttonsClassName,
   ...props
 }) => {
   const swiperRef = useRef<SwiperType>();
@@ -30,14 +36,21 @@ export const Slider: FC<Props> = ({
   return (
     <div className={styles.slider}>
       <div className={styles.title}>{title}</div>
-      <SliderButtons
-        swiperRef={swiperRef}
-        prev={prevButtonRef}
-        next={nextButtonRef}
-      />
+      {!disabled && (
+        <SliderButtons
+          swiperRef={swiperRef}
+          prev={prevButtonRef}
+          next={nextButtonRef}
+          nextButtonClassName={buttonsClassName}
+          prevButtonClassName={buttonsClassName}
+        />
+      )}
       <Swiper
         modules={[Navigation]}
         speed={1000}
+        allowSlideNext={!disabled}
+        allowSlidePrev={!disabled}
+        spaceBetween={24}
         wrapperClass={cn(styles.sliderWrapper, wrapperClass)}
         {...props}
         navigation={{
@@ -52,7 +65,9 @@ export const Slider: FC<Props> = ({
       >
         {children &&
           children.map((item, index) => (
-            <SwiperSlide key={index}>{item}</SwiperSlide>
+            <SwiperSlide className={slideClassName} key={index}>
+              {item}
+            </SwiperSlide>
           ))}
       </Swiper>
     </div>

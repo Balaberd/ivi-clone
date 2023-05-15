@@ -6,8 +6,8 @@ interface Props {
   children: ReactElement;
   className?: string;
   titleClassName?: string;
-  title?: ReactElement | string;
-  subtitle?: ReactElement | string;
+  title?: string;
+  subtitle?: string;
   subtitleClassName?: string;
 }
 

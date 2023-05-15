@@ -1,0 +1,39 @@
+@import "../../../shared/index.scss";
+
+.personCard {
+  .title {
+    color: $color-sofia;
+    white-space: pre-wrap;
+
+    &_listStyle {
+      @include set-font(13px, 16px, 500);
+    }
+  }
+}
+
+.posterWrapper {
+  position: relative;
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 1;
+  height: calc(100% / aspect-ratio);
+
+  border-radius: 100%;
+
+  max-width: 156px;
+}
+
+.label {
+  padding: 5px 8px;
+
+  color: $color-sofia;
+  background-color: $color-york;
+
+  border-radius: 2px;
+
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+}
