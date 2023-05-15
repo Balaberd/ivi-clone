@@ -6,13 +6,22 @@
 }
 .container {
   @extend %template-container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .teaserBlock {
   width: 100%;
-  margin-top: 24px;
+  margin-top: -24px;
   display: flex;
   gap: 24px;
+
+  @media (max-width: 880px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 
   .link {
     height: 48px;
@@ -35,4 +44,8 @@
     &_certificate {
     }
   }
+}
+
+.watchTV {
+  color: $color-tbilisi;
 }

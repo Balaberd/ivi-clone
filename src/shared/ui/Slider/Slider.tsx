@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { SliderButtons } from "../SliderButtons/SliderButtons";
 
 interface Props {
-  children: ReactElement[];
+  children?: ReactElement[];
   slidesPerView?: number | "auto";
   slidesPerGroup?: number;
   breakpoints?: any;
@@ -17,12 +17,14 @@ interface Props {
   title?: ReactElement | string;
   disabled?: boolean;
   buttonsClassName?: string;
+  slideClassName?: string;
 }
 
 export const Slider: FC<Props> = ({
   children,
-  title = "TITLE",
+  title,
   wrapperClass,
+  slideClassName,
   disabled = false,
   buttonsClassName,
   ...props
@@ -63,7 +65,9 @@ export const Slider: FC<Props> = ({
       >
         {children &&
           children.map((item, index) => (
-            <SwiperSlide key={index}>{item}</SwiperSlide>
+            <SwiperSlide className={slideClassName} key={index}>
+              {item}
+            </SwiperSlide>
           ))}
       </Swiper>
     </div>

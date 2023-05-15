@@ -34,7 +34,8 @@
 }
 
 .title {
-  @include set-font(28px, 30px, 500);
+  @include set-font(26px, 30px, 500);
+  text-align: center;
 }
 
 .imageWrapper {

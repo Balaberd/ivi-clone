@@ -1,32 +1,30 @@
-// Импорт глобальных переменных, шрифтов, глобальных стилей
 @import "../../index.scss";
 
-// --------Expanded block style-------- //
 .expandedBlock {
-  color: $color-sofia;
-  line-height: 22px;
-  font-family: iviSans;
-  line-height: 22px;
+  width: 100%;
+  max-width: 906px;
+
+  & p {
+    margin-top: 12px;
+  }
+  & ul {
+    margin-top: 12px;
+  }
+  & li {
+    margin-top: 12px;
+    list-style: disc;
+    list-style-position: inside;
+    padding-left: 16px;
+  }
 }
 
 .title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
+  @include set-font(20px, 24px, 700);
 }
 
 .content {
-  margin-top: 12px;
   color: $color-axum;
-  display: block;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.paragraph {
-  &:not(:first-child) {
-    margin-top: 8px;
-  }
+  @include set-font(15px, 22px, 400);
 }
 
 .hidden {
@@ -39,15 +37,10 @@
 }
 
 .button {
-  color: $color-sofia;
   margin-top: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  opacity: 0.8;
-  cursor: pointer;
-  transition: all 0.3s;
 
-  &:hover {
-    opacity: 1;
-  }
+  @include set-font(15px, 22px, 500);
+  cursor: pointer;
+
+  @extend %template-link;
 }

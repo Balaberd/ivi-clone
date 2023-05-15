@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const Rating: FC<Props> = ({ rating }) => {
-  const formatedRatingValue = `${rating}`.split(".");
+  const formatedRatingValue = `${rating || 0}`.split(".");
   if (formatedRatingValue.length === 1) {
     formatedRatingValue[1] = "0";
   }

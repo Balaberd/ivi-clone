@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IMovieBySlider } from "./movie.types";
+import { IMovieCollection, IMoviePromo, TGenre } from "./movie.types";
 
 export const movieApi = createApi({
   reducerPath: "api/products",
@@ -7,13 +7,20 @@ export const movieApi = createApi({
     baseUrl: "http://localhost:4000/movies/",
   }),
   endpoints: (build) => ({
-    getBannerData: build.query<IMovieBySlider[], number>({
-      query: () => "carousel",
+    getMoviesPromo: build.query<IMoviePromo[], number>({
+      query: () => "promo",
     }),
-    getMovieSlider: build.query<IMovieBySlider[], number>({
-      query: () => "rec",
+    getMovieCollection: build.query<IMovieCollection[], number>({
+      query: (genre: TGenre) => `collection/genre/${genre}`,
+    }),
+    getFavoriteMovies: build.query<IMovieCollection[], number>({
+      query: () => "collection/rec",
     }),
   }),
 });
 
-export const { useGetBannerDataQuery, useGetMovieSliderQuery } = movieApi;
+export const {
+  useGetMoviesPromoQuery,
+  useGetMovieCollectionQuery,
+  useGetFavoriteMoviesQuery,
+} = movieApi;

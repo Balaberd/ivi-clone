@@ -1,13 +1,14 @@
-import React, { FC, useState } from "react";
+import React, { FC, ReactElement, useState } from "react";
 import cn from "classnames";
 import styles from "./ExpandedBlock.module.scss";
 
-interface ExpandedBlockProps {
+interface Props {
   title: string;
-  content: string;
+  children: ReactElement;
+  className?: string;
 }
 
-export const ExpandedBlock: FC<ExpandedBlockProps> = ({ title, content }) => {
+export const ExpandedBlock: FC<Props> = ({ title, children, className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleBlock = () => {
@@ -15,17 +16,16 @@ export const ExpandedBlock: FC<ExpandedBlockProps> = ({ title, content }) => {
   };
 
   return (
-    <div className={styles.expandedBlock} data-testid="expandedBlock">
+    <div
+      className={cn(styles.expandedBlock, className)}
+      data-testid="expandedBlock"
+    >
       <h2 className={styles.title}>{title}</h2>
       <div
         className={cn(styles.content, !isExpanded && styles.hidden)}
         data-testid="content"
       >
-        {content.split("\n").map((paragraph, i) => (
-          <p key={i} className={styles.paragraph} data-testid="paragraph">
-            {paragraph}
-          </p>
-        ))}
+        {children}
       </div>
       <button className={styles.button} onClick={toggleBlock}>
         {!isExpanded ? "Развернуть" : "Свернуть"}

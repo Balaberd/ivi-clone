@@ -19,3 +19,14 @@
     opacity: $opacity-imi;
   }
 }
+
+%template-color-button {
+  transition: 0.2s;
+
+  color: $color-axum;
+  background-color: $color-varna;
+
+  &:hover {
+    background-color: $color-harn;
+  }
+}
