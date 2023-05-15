@@ -183,3 +183,9 @@
 .allDevices::before {
   content: "\E02B";
 }
+
+@media (max-width: 1158px) {
+  .container {
+    display: none;
+  }
+}
