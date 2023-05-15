@@ -19,3 +19,20 @@
     opacity: $opacity-imi;
   }
 }
+
+%template-link-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6px;
+  color: $color-sofia;
+  background-color: $color-varna;
+
+  border-radius: 8px;
+
+  transition: 0.2s;
+  &:hover {
+    background-color: $color-berbera;
+  }
+}
