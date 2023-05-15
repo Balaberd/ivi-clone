@@ -2,9 +2,9 @@
 
 .filterTag {
   padding: 6px 16px;
-
   border-radius: 16px;
 
-  @extend %template-color-button;
   @include set-font(15px, 20px, 700);
+  @extend %template-link-button;
+  color: $color-axum;
 }
