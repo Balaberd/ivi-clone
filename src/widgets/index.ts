@@ -5,4 +5,4 @@ export { Header } from "./ui/Header/Header";
 export { HeaderMobile } from "./ui/Header/HeaderMobile/HeaderMobile";
 export { MainFilter } from "./ui/MainFilter/MainFilter";
 export { FilterByTag } from "./ui/FilterByTag/FilterByTag";
-export { MyFooter } from "./ui/Footer/MyFooter";
+export { Footer } from "./ui/Footer/Footer";

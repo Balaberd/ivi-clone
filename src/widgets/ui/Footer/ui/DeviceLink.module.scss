@@ -1,0 +1,15 @@
+@import "../../../../shared/index.scss";
+
+.devices {
+  @extend %template-link-button;
+  padding: 8px 20px;
+}
+.deviceText {
+  color: rgba($color-sofia, $opacity-hemza);
+  @include set-font(10px, 12px, 500);
+}
+
+.deviceType {
+  color: $color-sofia;
+  @include set-font(15px, 20px, 500);
+}

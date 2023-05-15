@@ -1,0 +1,185 @@
+@import "../../../shared/index.scss";
+
+.container {
+  @extend %template-container;
+}
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+
+  padding: 50px 0;
+  border-top: 1px solid rgba($color-sofia, $opacity-bana);
+  border-bottom: 1px solid rgba($color-sofia, $opacity-bana);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutUs,
+.sections,
+.supportColumn,
+.watch {
+  width: 286px;
+}
+
+.columnTitle {
+  color: $color-sofia;
+  @include set-font(15px, 20px, 700);
+}
+
+.column a,
+.column p,
+.supportColumn p {
+  @extend %template-link;
+  @include set-font(15px, 20px);
+  margin-top: 10px;
+}
+
+.column ul li {
+  margin-top: 10px;
+}
+
+.activate {
+  font-weight: 500;
+  background: -webkit-linear-gradient(left, $color-madrid, $color-york);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.supportColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.textInChat {
+  @extend %template-link-button;
+  width: 196px;
+  height: 40px;
+
+  margin: 16px 0;
+}
+
+.supportIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.ask {
+  color: $color-sofia;
+  @include set-font(16px);
+
+  margin-top: 30px;
+  transition: ease-in-out 0.4s;
+}
+
+.ask:hover {
+  color: rgba($color-sofia, $opacity-hemza);
+}
+
+.megaphone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient($color-york, darken($color-york, 10%));
+  box-shadow: 0 0 104px $color-york;
+
+  height: 104px;
+  width: 104px;
+  border-radius: 20px;
+
+  position: relative;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+}
+
+.watch p {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.mailCall,
+.socials {
+  @extend %template-link-button;
+  height: 40px;
+  width: 40px;
+}
+
+.socials {
+  border-radius: 800px;
+}
+
+.devicesNSocials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 50px;
+}
+
+.devicesBlock,
+.socialsBlock {
+  display: flex;
+  gap: 12px;
+}
+
+.copyright {
+  color: rgba($color-sofia, $opacity-tesa);
+  @include set-font(15px, 20px);
+
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.mail,
+.phone,
+.megaphone,
+.smartTV,
+.allDevices {
+  font-family: IconFont;
+}
+
+%template-megaphone {
+  color: $color-sofia;
+  @include set-font(56px, 56px);
+}
+
+.megaphone::before {
+  content: "\E273";
+  position: absolute;
+
+  @extend %template-megaphone;
+}
+
+.megaphone::after {
+  content: "\E274";
+  position: absolute;
+
+  @extend %template-megaphone;
+}
+
+.mail::before {
+  content: "\E0D8";
+  color: $color-sofia;
+  @include set-font(16px, 16px);
+}
+
+.phone::before {
+  content: "\E06A";
+  color: $color-sofia;
+  @include set-font(16px, 16px);
+}
+
+.smartTV::before {
+  content: "\E361";
+}
+
+.allDevices::before {
+  content: "\E02B";
+}
