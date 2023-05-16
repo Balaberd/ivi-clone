@@ -4,11 +4,11 @@ import { MovieCard } from "@/entities";
 import styles from "./MoviesList.module.scss";
 
 export const MoviesList: FC = () => {
-  const { data } = useGetMoviesQuery({ limit: 10 });
+  const { data } = useGetMoviesQuery({});
 
   return (
     <div className={styles.moviesList}>
-      {data && data.map((el, ind) => <MovieCard key={ind} {...el} />)}
+      {data && data.map((movie) => <MovieCard key={movie.id} {...movie} />)}
     </div>
   );
 };

@@ -15,7 +15,7 @@ export const MovieSlider: FC<Props> = ({ params, sliderTitle }) => {
 
   return (
     <Slider title={sliderTitle} breakpoints={breakpoints} spaceBetween={24}>
-      {data && data.map((el, ind) => <MovieCard key={ind} {...el} />)}
+      {data && data.map((movie) => <MovieCard key={movie.id} {...movie} />)}
     </Slider>
   );
 };

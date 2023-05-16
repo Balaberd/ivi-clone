@@ -12,7 +12,7 @@ export const movieApi = createApi({
       query: () => "promo",
     }),
     getTopMovies: build.query<IMovie[], TMovieQueryParams>({
-      query: () => "collection/rec",
+      query: () => "/weeklyTop",
     }),
     getMovies: build.query<IMovie[], TMovieQueryParams>({
       query: (params) => `/${getUrlParam(params)}`,

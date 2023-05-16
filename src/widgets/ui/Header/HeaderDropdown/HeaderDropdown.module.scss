@@ -1,0 +1,83 @@
+@import "../../../../shared/index.scss";
+
+.headerDropdown {
+  width: 100%;
+  height: fit-content;
+  padding: 32px;
+
+  display: flex;
+
+  border-radius: 12px;
+
+  position: absolute;
+  bottom: 0;
+  top: 50px;
+
+  background-color: $color-varna;
+
+  z-index: 3;
+}
+
+.block {
+  display: flex;
+  gap: 50px;
+}
+
+.column {
+  .title {
+    @include set-font(15px, 18px, 700);
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
+
+  .list {
+    margin-top: 8px;
+    display: grid;
+    row-gap: 8px;
+    column-gap: 50px;
+
+    &_country {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.link {
+  @extend %template-link;
+  @include set-font(15px, 18px);
+
+  white-space: nowrap;
+  height: 100%;
+}
+
+.collection {
+  height: 100%;
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    content: "";
+    height: 100%;
+    border-left: 1px solid rgba($color-sofia, $opacity-bana);
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .link {
+    padding-left: 16px;
+
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border-left: 3px solid rgba($color-sofia, $opacity-imi);
+    }
+  }
+}

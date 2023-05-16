@@ -5,7 +5,7 @@ import styles from "./GenreFilter.module.scss";
 import { breakpoints } from "./lib/breakpoints";
 
 export const GenreFilter: FC = () => (
-  <Slider breakpoints={breakpoints}>
+  <Slider title={"Жанры"} breakpoints={breakpoints} spaceBetween={24}>
     <GenreCard title={"Драмы"} iconClassName={styles.drama} />
     <GenreCard title={"Комедии"} iconClassName={styles.comedy} />
     <GenreCard title={"Боевики"} iconClassName={styles.action} />

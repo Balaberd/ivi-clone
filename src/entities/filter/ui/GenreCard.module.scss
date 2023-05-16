@@ -1,6 +1,7 @@
 @import "../../../shared/index.scss";
 
 .genreCard {
+  width: 100%;
   padding: 24px 8px;
 
   @extend %template-link-button;
@@ -27,12 +28,13 @@
   font-size: 32px;
 
   &::before {
-    color: red;
+    color: $color-dublin;
     position: absolute;
     top: 0;
     left: 0;
   }
   &::after {
+    color: $color-madrid;
     position: absolute;
     top: 0;
     left: 0;

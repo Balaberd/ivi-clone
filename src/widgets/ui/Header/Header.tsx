@@ -4,6 +4,7 @@ import Link from "next/link";
 import cn from "classnames";
 import styles from "./Header.module.scss";
 import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
+import { HeaderDropdown } from "./HeaderDropdown/HeaderDropdown";
 
 export const Header: FC = () => (
   <header className={styles.header}>
@@ -65,5 +66,6 @@ export const Header: FC = () => (
       <div className={cn(styles.icon, styles.icon_auth)}></div>
     </Link>
     <HeaderMobile />
+    <HeaderDropdown />
   </header>
 );
