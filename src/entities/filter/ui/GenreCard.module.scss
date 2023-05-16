@@ -3,7 +3,7 @@
 .genreCard {
   padding: 24px 8px;
 
-  @extend %template-color-button;
+  @extend %template-link-button;
 
   border-radius: 8px;
 

@@ -19,17 +19,25 @@ export const MovieCardContent: FC<Props> = ({
   genre,
   country,
   durations,
-  className,
   actions,
-}) => (
-  <div className={cn(styles.movieCardContent, className)}>
-    <div className={styles.actionBlock}>{actions}</div>
-    <div className={styles.movieInfo}>
-      <Rating rating={rating} />
-      <div className={styles.description}>
-        <span className={styles.info}>{`${years}, ${country}, ${genre}`}</span>
-        <span className={styles.duration}>{durations}</span>
+  className,
+}) => {
+  const movieInfo = `
+    ${years ? `${years}` : ""}
+    ${country ? `, ${country} ` : ""}
+    ${genre ? `, ${genre} ` : ""}
+  `;
+
+  return (
+    <div className={cn(styles.movieCardContent, className)}>
+      <div className={styles.actionBlock}>{actions}</div>
+      <div className={styles.movieInfo}>
+        <Rating rating={rating} />
+        <div className={styles.description}>
+          <span className={styles.info}>{movieInfo}</span>
+          <span className={styles.duration}>{durations}</span>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};

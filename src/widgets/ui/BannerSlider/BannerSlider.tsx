@@ -5,7 +5,7 @@ import cn from "classnames";
 import "swiper/css";
 import { SliderButtons } from "@/shared/ui/SliderButtons/SliderButtons";
 import { BannerCard } from "@/entities";
-import { useGetMoviesPromoQuery } from "@/app-fsd/model/movie.api";
+import { useGetMoviesPromoQuery } from "@/app-fsd/model/movie/movie.api";
 import styles from "./BannerSlider.module.scss";
 
 export const BannerSlider: FC = () => {

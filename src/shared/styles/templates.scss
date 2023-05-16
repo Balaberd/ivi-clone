@@ -25,6 +25,8 @@
   justify-content: center;
   align-items: center;
 
+  padding: 12px;
+
   gap: 6px;
   color: $color-sofia;
   background-color: $color-varna;
@@ -32,6 +34,8 @@
   border-radius: 8px;
 
   transition: 0.2s;
+
+  cursor: pointer;
   &:hover {
     background-color: $color-berbera;
   }

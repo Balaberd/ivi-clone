@@ -1,38 +1,41 @@
 import { FC, ReactElement, useState } from "react";
 import cn from "classnames";
-
 import Image from "next/image";
 import styles from "./Poster.module.scss";
 
 interface Props {
   imageUrl: string;
-  classNames?: string;
-  children?: ReactElement;
   title: string;
+  children?: ReactElement;
+  classNames?: string;
 }
 
 export const Poster: FC<Props> = ({
-  classNames,
   imageUrl,
-  children,
   title,
+  children,
+  classNames,
 }) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
-
-  const prefix = "https://";
-
+  const isValidAndLoaded = isImageLoaded && !!imageUrl.trim();
+  const validUrl =
+    !!imageUrl.trim() && imageUrl.startsWith("https://")
+      ? imageUrl
+      : `https://${imageUrl}`;
   return (
     <div className={cn(styles.poster, classNames)} data-testid="custom-element">
-      {!isImageLoaded && (
-        <div className={cn(styles.image, styles.image_isLoading)}></div>
-      )}
       <Image
-        className={styles.image}
-        src={imageUrl.startsWith(prefix) ? imageUrl : prefix + imageUrl}
-        alt={`постер к фильму/актеру ${title}`}
+        className={cn(styles.image, { [styles.unvisible]: !isValidAndLoaded })}
+        src={validUrl}
+        alt={`постер фильма/актера ${title}`}
         fill
-        onLoad={() => setIsImageLoaded(true)}
+        onLoadingComplete={() => setIsImageLoaded(true)}
       />
+      <div
+        className={cn(styles.image, styles.image_isLoading, {
+          [styles.unvisible]: isValidAndLoaded,
+        })}
+      ></div>
       {children}
     </div>
   );
