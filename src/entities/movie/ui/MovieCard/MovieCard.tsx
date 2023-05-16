@@ -8,22 +8,22 @@ import { MovieCardContent } from "./MovieCardContent/MovieCardContent";
 
 interface Props {
   id: number;
-  imageUrl: string;
+  avatars: string;
   rating: number;
   years: string;
   genre: string;
   country: string;
-  title: string;
+  name: string;
   durations: string;
 }
 
-export const MovieCard: FC<Props> = ({ id, imageUrl, title, ...props }) => (
+export const MovieCard: FC<Props> = ({ id, avatars, name, ...props }) => (
   <Link className={styles.movieCard} href={`/movies/${id}`}>
-    <Card title={title} subtitle={"Беслпатно"}>
+    <Card title={name} subtitle={"Беслпатно"}>
       <Poster
         classNames={cn(styles.poster)}
-        imageUrl={`https://${imageUrl}`}
-        title={title}
+        imageUrl={`https://${avatars}`}
+        title={name}
       >
         <MovieCardContent className={styles.movieProperties} {...props} />
       </Poster>

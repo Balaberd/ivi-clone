@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Slider } from "@/shared/ui/Slider/Slider";
-import styles from "./FilterByTag.module.scss";
-import { FilterTag } from "./FilterTag/FilterTag";
+import styles from "./TagFilter.module.scss";
+import { Tag } from "./Tag/Tag";
 
-export const FilterByTag: FC = () => (
+export const TagFilter: FC = () => (
   <Slider
     slidesPerGroup={3}
     spaceBetween={10}
@@ -11,6 +11,6 @@ export const FilterByTag: FC = () => (
     slideClassName={styles.slide}
     buttonsClassName={styles.sliderButtons}
   >
-    {new Array(20).fill(<FilterTag text={"2022 год"} />)}
+    {new Array(20).fill(<Tag text={"2022 год"} />)}
   </Slider>
 );

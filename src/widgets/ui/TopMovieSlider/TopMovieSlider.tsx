@@ -8,15 +8,6 @@ import { breakpoints } from "./lib/breakpoints";
 export const TopMovieSlider: FC = () => {
   const { data } = useGetTopMoviesQuery({ limit: 10 });
 
-  let movies;
-  if (data) {
-    movies = data.map(({ id, avatars, name }) => ({
-      id,
-      title: name,
-      imageUrl: avatars,
-    }));
-  }
-
   const title = (
     <>
       <Image
@@ -30,8 +21,8 @@ export const TopMovieSlider: FC = () => {
   );
   return (
     <Slider title={title} breakpoints={breakpoints} spaceBetween={24}>
-      {movies &&
-        movies.map((el, ind) => (
+      {data &&
+        data.map((el, ind) => (
           <TopMovieCard ratingInTop={ind + 1} key={ind} {...el} />
         ))}
     </Slider>

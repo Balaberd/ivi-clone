@@ -3,3 +3,155 @@
   line-height: $line-height;
   font-weight: $font-weight;
 }
+
+@mixin font-icon($iconName) {
+  @if $iconName == "sadMask" {
+    &::before {
+      content: "\E182";
+    }
+    &::after {
+      content: "\E183";
+    }
+  }
+  @if $iconName == "smileMask" {
+    &::before {
+      content: "\E165";
+    }
+    &::after {
+      content: "\E183";
+    }
+  }
+  @if $iconName == "weapon" {
+    &::before {
+      content: "\E144";
+    }
+    &::after {
+      content: "\E143";
+    }
+  }
+
+  @if $iconName == "ghost" {
+    &::before {
+      content: "\E1F5";
+    }
+    &::after {
+      content: "\E1F4";
+    }
+  }
+
+  @if $iconName == "map" {
+    &::before {
+      content: "\E14D";
+    }
+    &::after {
+      content: "\E14C";
+    }
+  }
+
+  @if $iconName == "globus" {
+    &::before {
+      content: "\E19E";
+    }
+    &::after {
+      content: "\E19F";
+    }
+  }
+
+  @if $iconName == "hearts" {
+    &::before {
+      content: "\E1BB";
+    }
+    &::after {
+      content: "\E1BC";
+    }
+  }
+
+  @if $iconName == "alian" {
+    &::before {
+      content: "\E191";
+    }
+    &::after {
+      content: "\E190";
+    }
+  }
+
+  @if $iconName == "wizardHat" {
+    &::before {
+      content: "\E196";
+    }
+    &::after {
+      content: "\E195";
+    }
+  }
+
+  @if $iconName == "family" {
+    &::before {
+      content: "\E18B";
+    }
+    &::after {
+      content: "\E18C";
+    }
+  }
+
+  @if $iconName == "detective" {
+    &::before {
+      content: "\E172";
+    }
+    &::after {
+      content: "\E171";
+    }
+  }
+
+  @if $iconName == "knife" {
+    &::before {
+      content: "\E1A7";
+    }
+    &::after {
+      content: "\E1A6";
+    }
+  }
+
+  @if $iconName == "tank" {
+    &::before {
+      content: "\E1BF";
+    }
+    &::after {
+      content: "\E1C0";
+    }
+  }
+
+  @if $iconName == "crime" {
+    &::before {
+      content: "\E16E";
+    }
+    &::after {
+      content: "\E16D";
+    }
+  }
+
+  @if $iconName == "western" {
+    &::before {
+    }
+    &::after {
+      content: "\E240";
+    }
+  }
+
+  @if $iconName == "biography" {
+    &::before {
+      content: "\E15D";
+    }
+    &::after {
+      content: "\E15C";
+    }
+  }
+
+  @if $iconName == "sport" {
+    &::before {
+      content: "\E1F0";
+    }
+    &::after {
+      content: "\E1EF";
+    }
+  }
+}

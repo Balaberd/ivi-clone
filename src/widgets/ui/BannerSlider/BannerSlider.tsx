@@ -13,17 +13,7 @@ export const BannerSlider: FC = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
 
-  const { data } = useGetMoviesPromoQuery(6);
-
-  let bannerData;
-  if (data) {
-    bannerData = data.map(({ id, name, promo, text }) => ({
-      id,
-      title: name,
-      description: text,
-      imageUrl: promo,
-    }));
-  }
+  const { data } = useGetMoviesPromoQuery({ limit: 6 });
 
   return (
     <div className={styles.bannerSlider}>
@@ -44,15 +34,15 @@ export const BannerSlider: FC = () => {
           swiperRef.current = swiper;
         }}
       >
-        {bannerData &&
-          bannerData.map((movie) => (
+        {data &&
+          data.map((movie) => (
             <SwiperSlide key={movie.id}>
               <BannerCard
                 key={movie.id}
                 id={movie.id}
-                title={movie.title}
-                description={movie.description}
-                imageUrl={movie.imageUrl}
+                name={movie.name}
+                text={movie.text}
+                promo={movie.promo}
               />
             </SwiperSlide>
           ))}

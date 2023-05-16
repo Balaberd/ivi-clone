@@ -7,8 +7,8 @@ import styles from "./TopMovieCard.module.scss";
 
 interface Props {
   id: number;
-  title: string;
-  imageUrl: string;
+  name: string;
+  avatars: string;
   className?: string;
   ratingInTop: number;
 }
@@ -16,18 +16,18 @@ interface Props {
 export const TopMovieCard: FC<Props> = ({
   id,
   className,
-  imageUrl,
-  title,
+  avatars,
+  name,
   ratingInTop,
 }) => (
   <Link href={`/movies/${id}`}>
     <Poster
       classNames={cn(styles.poster, className)}
-      imageUrl={imageUrl}
-      title={title}
+      imageUrl={avatars}
+      title={name}
     >
       <div className={styles.content}>
-        <h4 className={styles.title}>{title}</h4>
+        <h4 className={styles.title}>{name}</h4>
       </div>
     </Poster>
     <div className={styles.imageWrapper}>
