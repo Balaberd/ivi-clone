@@ -48,4 +48,8 @@
 
 .watchTV {
   color: $color-tbilisi;
+
+  & p {
+    margin-bottom: 16px;
+  }
 }
