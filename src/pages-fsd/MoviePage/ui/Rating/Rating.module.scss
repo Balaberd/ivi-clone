@@ -1,0 +1,57 @@
+@import "../../../../shared/index.scss";
+
+.container {
+  max-width: 50px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 4px;
+  background-color: rgba($color-sofia, $opacity-kurza);
+
+  border-radius: 8px;
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: $color-sofia;
+    border-radius: 4px;
+
+    @include set-font(15px, 20px, 500);
+  }
+
+  .green {
+    background-color: $color-beirut;
+  }
+
+  .yellow {
+    background-color: $color-rome;
+  }
+
+  .red {
+    background-color: $color-adelaide;
+  }
+
+  .photo {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+}
+
+.title {
+  color: rgba($color-sofia, $opacity-tesa);
+  padding-top: 6px;
+
+  @include set-font(13px, 16px, 500);
+  text-align: center;
+}

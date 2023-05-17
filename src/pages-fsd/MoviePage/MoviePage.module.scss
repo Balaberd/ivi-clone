@@ -1,0 +1,61 @@
+@import "../../shared/index.scss";
+
+.container {
+  @extend %template-container;
+}
+
+.breadCrumbs {
+  @include set-font(15px, 20px, 500);
+  color: rgba($color-sofia, $opacity-zeton);
+
+  padding-top: 30px; // ?? не так работает как хочется
+
+  transition: 0.2s;
+
+  &:hover {
+    color: $color-sofia;
+  }
+}
+
+.movie {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 30px;
+
+  .player {
+    max-height: 450px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 500px;
+  padding-left: 70px;
+
+  .title {
+    @include set-font(56px, 56px, 700);
+    text-align: center;
+
+    padding-bottom: 15px;
+  }
+
+  .details {
+    @include set-font(15px, 20px);
+    color: rgba($color-sofia, $opacity-hemza);
+    padding-top: 5px;
+  }
+
+  .dots::before {
+    content: " - ";
+  }
+
+  .actorsBlock {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+  }
+}

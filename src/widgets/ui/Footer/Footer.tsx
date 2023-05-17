@@ -117,32 +117,38 @@ export const Footer: FC = () => (
       </div>
       <div className={cn(styles.column, styles.supportColumn)}>
         <span className={styles.title}>Служба поддержки</span>
-        <p>
-          Мы всегда готовы вам помочь.
-          <br />
-          Наши операторы онлайн 24/7
-        </p>
-        <a
-          href="https://www.ivi.ru/profile"
-          className={cn(styles.button, styles.button_textInChat)}
-        >
-          Написать в чате
-        </a>
-        <div className={styles.supportContactsBlock}>
-          <a href="mailto:support@ivi.ru" className={styles.mailCall}>
-            <span className={styles.mail}></span>
-          </a>
-          <a href="mailto:support@ivi.ru" className={styles.mailCall}>
-            <span className={styles.phone}></span>
-          </a>
+        <div>
+          <p>
+            Мы всегда готовы вам помочь.
+            <br />
+            Наши операторы онлайн 24/7
+          </p>
         </div>
-        <a
-          href="https://ask.ivi.ru/?_gl=1*swf04a*_ga*OTE5MTg2MTQ3LjE2ODE1NTMxMTk.*_ga_GETQ4387MJ*MTY4MzYxNzQxMi4xNi4xLjE2ODM2MTk3NjIuNTguMC4w"
-          className={styles.ask}
-        >
-          ask.ivi.ru
-        </a>
-        <p>Ответы на вопросы</p>
+        <div>
+          <a
+            href="https://www.ivi.ru/profile"
+            className={cn(styles.button, styles.button_textInChat)}
+          >
+            Написать в чате
+          </a>
+          <div className={styles.supportContactsBlock}>
+            <a href="mailto:support@ivi.ru" className={styles.mailCall}>
+              <span className={styles.mail}></span>
+            </a>
+            <a href="mailto:support@ivi.ru" className={styles.mailCall}>
+              <span className={styles.phone}></span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <a
+            href="https://ask.ivi.ru/?_gl=1*swf04a*_ga*OTE5MTg2MTQ3LjE2ODE1NTMxMTk.*_ga_GETQ4387MJ*MTY4MzYxNzQxMi4xNi4xLjE2ODM2MTk3NjIuNTguMC4w"
+            className={styles.ask}
+          >
+            ask.ivi.ru
+          </a>
+          <p>Ответы на вопросы</p>
+        </div>
       </div>
       <div className={cn(styles.column, styles.watch)}>
         <div>

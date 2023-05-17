@@ -43,6 +43,7 @@
     background: -webkit-linear-gradient(left, $color-madrid, $color-york);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 1;
   }
   p {
     margin-top: 10px;
@@ -72,13 +73,6 @@
       margin-top: 35px;
     }
   }
-}
-
-.activate {
-  font-weight: 500;
-  background: -webkit-linear-gradient(left, $color-madrid, $color-york);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .button {

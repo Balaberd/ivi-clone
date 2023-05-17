@@ -1,6 +1,6 @@
 export { Poster } from "./ui/Poster/Poster";
 export { RatingLine } from "./ui/RatingLine/RatingLine";
-export { Trailer } from "./ui/Trailer/Trailer";
+export { Player } from "./ui/Player/Player";
 export { Card } from "./ui/Card/Card";
 export { Dropdown } from "./ui/Dropdown/Dropdown";
 export { ExpandedBlock } from "./ui/ExpandedBlock/ExpandedBlock";

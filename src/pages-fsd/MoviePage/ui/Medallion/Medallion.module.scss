@@ -1,0 +1,33 @@
+@import "@/shared/index.scss";
+
+.container {
+  max-width: 50px;
+
+  .medallion {
+    display: flex;
+    justify-content: center;
+
+    padding: 4px;
+    background-color: rgba($color-sofia, $opacity-kurza);
+
+    border-radius: 8px;
+
+    .photo {
+      max-width: 40px;
+      max-height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    color: rgba($color-sofia, $opacity-tesa);
+    padding-top: 6px;
+
+    @include set-font(13px, 16px, 500);
+  }
+}
