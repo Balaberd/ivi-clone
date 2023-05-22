@@ -98,7 +98,7 @@ export const MoviePage: FC<IMoviePage> = ({
         </div>
 
         <div className={styles.personSlider}>
-          <PersonSlider />
+          <PersonSlider isSlider={false} />
         </div>
 
         <div className={styles.reviewBlock}>
