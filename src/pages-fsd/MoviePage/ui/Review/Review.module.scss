@@ -1,0 +1,69 @@
+@import "@/shared/index.scss";
+
+.container {
+  display: inline-block;
+
+  background-color: $color-varna;
+
+  padding: 20px 20px;
+
+  max-width: 24%;
+  border-radius: 8px;
+
+  .name {
+    color: $color-axum;
+    @include set-font(13px, 16px, 700);
+  }
+
+  .body {
+    padding-top: 10px;
+
+    @include set-font(15px, 22px);
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+
+  .dateLikesBlock {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include set-font(15px, 20px, 700);
+
+    .likeDislikeBlock {
+      display: flex;
+    }
+
+    .date {
+      color: $color-axum;
+      @include set-font(13px, 16px);
+    }
+
+    .button {
+      color: $color-axum;
+      padding: 0 10px;
+
+      font-family: IconFont;
+      font-size: 16px;
+    }
+
+    .up::before {
+      content: "\E3A5";
+    }
+
+    .down::before {
+      content: "\E39D";
+    }
+
+    .like {
+      color: $color-beirut;
+    }
+
+    .dislike {
+      color: $color-hanoi;
+    }
+  }
+}

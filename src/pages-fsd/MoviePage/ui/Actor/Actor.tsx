@@ -1,18 +1,18 @@
 import React, { FC } from "react";
 import cn from "classnames";
 import Image from "next/image";
-import styles from "./Medallion.module.scss";
+import styles from "./Actor.module.scss";
 
-interface IMedallion {
+interface IActor {
   photoUrl: string;
   name: string;
   classNames?: string;
 }
 
-export const Medallion: FC<IMedallion> = ({ photoUrl, name, classNames }) => (
+export const Actor: FC<IActor> = ({ photoUrl, name, classNames }) => (
   <div className={cn(styles.container, classNames)}>
     <div>
-      <div className={styles.medallion}>
+      <div className={styles.actor}>
         <Image
           data-testid="photoOfActor"
           loader={() => photoUrl}

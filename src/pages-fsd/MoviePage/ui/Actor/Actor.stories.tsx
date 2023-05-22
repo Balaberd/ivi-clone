@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Medallion } from "./Medallion";
-// добавим стилей
+import { Actor } from "./Actor";
 import "../../../../shared/styles/vars.scss";
-import "./Medallion.module.scss";
+import "./Actor.module.scss";
 
-const meta: Meta<typeof Medallion> = {
-  title: "UI/Medallion",
-  component: Medallion,
+const meta: Meta<typeof Actor> = {
+  title: "UI/Actor",
+  component: Actor,
   tags: ["autodocs"],
   parameters: {
     backgrounds: { default: "dark" },
@@ -29,9 +28,9 @@ const meta: Meta<typeof Medallion> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Medallion>;
+type Story = StoryObj<typeof Actor>;
 
-export const Actor: Story = {
+export const ActorMed: Story = {
   args: {
     name: "Скарлет Йохансон",
     photoUrl:

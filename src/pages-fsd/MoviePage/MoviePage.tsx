@@ -1,18 +1,22 @@
 import React, { FC } from "react";
-import { Player } from "@/shared";
+import { ExpandedBlock, Player } from "@/shared";
 import cn from "classnames";
+import { MovieSlider, PersonSlider } from "@/widgets";
+import Image from "next/image";
 import styles from "./MoviePage.module.scss";
 import { Rating } from "./ui/Rating/Rating";
-import { Medallion } from "./ui/Medallion/Medallion";
+import { Actor } from "./ui/Actor/Actor";
+import Review from "./ui/Review/Review";
 
 interface IMoviePage {
   trailerUrl?: string;
+  posterUrl: string;
   title: string;
   year: string | number;
   length: number;
   ageRating: string | number;
   country: string;
-  genres: string[];
+  genres: string;
   rating: number;
   actors: object[];
   description?: string;
@@ -35,6 +39,7 @@ function lengthConverter(length: number) {
 
 export const MoviePage: FC<IMoviePage> = ({
   trailerUrl,
+  posterUrl,
   title,
   year,
   length,
@@ -64,18 +69,14 @@ export const MoviePage: FC<IMoviePage> = ({
             <div className={cn(styles.details)}>
               <span>{country}</span>
               <span>
-                {genres.map((data: string, index: number) => (
-                  <span className={styles.dots} key={index}>
-                    {data}
-                  </span>
-                ))}
+                <span className={styles.dots}>{genres}</span>
               </span>
             </div>
 
             <div className={styles.actorsBlock}>
               <Rating rating={rating} />
               {actors.map((actor: any, index: number) => (
-                <Medallion
+                <Actor
                   photoUrl={actor.photoUrl}
                   name={actor.name}
                   key={index}
@@ -83,15 +84,52 @@ export const MoviePage: FC<IMoviePage> = ({
               ))}
             </div>
 
-            <div className={styles.details}>{description}</div>
+            <div className={styles.details}>
+              <ExpandedBlock>{description}</ExpandedBlock>
+            </div>
           </div>
         </div>
 
-        <div>С фильмом смотрят</div>
+        <div className={styles.movieSlider}>
+          <MovieSlider
+            sliderTitle={`С фильмом «${title}» смотрят`}
+            params={{ genre: `${genres}` }}
+          />
+        </div>
 
-        <div>Актеры и создатели - список персон в кружках</div>
-        <div>Трейлеры и доп. материалы</div>
-        <div>{reviews && "Отзывы. Тут сделать компонент."}</div>
+        <div className={styles.personSlider}>
+          <PersonSlider />
+        </div>
+
+        <div className={styles.reviewBlock}>
+          {reviews?.map((review, index: number) => (
+            <Review
+              name={review.name}
+              body={review.body}
+              date={review.date}
+              likesNum={review.likesAmount}
+              key={index}
+            />
+          ))}
+        </div>
+
+        <div className={styles.watchOnEveryDevice}>
+          <div className={styles.watchDeviceInfo}>
+            <h4>Cмотреть «{title}» на всех устройствах</h4>
+            <p>
+              Приложение доступно для скачивания на iOS, Android, SmartTV и
+              приставках
+            </p>
+            <a href="https://www.ivi.ru/devices">Подключить устройства</a>
+          </div>
+          <Image
+            src={posterUrl}
+            alt="Постер фильма"
+            width={700}
+            height={400}
+            className={styles.poster}
+          />
+        </div>
       </div>
     </div>
   </>
