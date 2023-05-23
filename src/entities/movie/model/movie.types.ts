@@ -1,8 +1,11 @@
+import { TCountryId, TGenreId } from "@/entities/filter/const/filteres";
+
 export type TMovieQueryParams = {
   limit?: number;
-  genre?: number;
-  country?: number;
-  rating?: number;
+  genre: Array<TGenreId>;
+  country: Array<TCountryId>;
+  rating?: Array<number>;
+  year: number | null;
 };
 
 type TPerson = {
@@ -11,14 +14,16 @@ type TPerson = {
 };
 
 interface TCountry {
-  id: number;
+  id: TCountryId;
   value: string;
 }
 
 interface TGenre {
-  id: number;
+  id: TGenreId;
   value: string;
 }
+
+type TAgeLimit = 6 | 12 | 16 | 18;
 
 export interface IMovie {
   id: number;
@@ -35,4 +40,5 @@ export interface IMovie {
   director_id: number;
   director: TPerson[];
   actors: TPerson[];
+  ageLimit: TAgeLimit;
 }

@@ -5,6 +5,9 @@ import cn from "classnames";
 import styles from "./Header.module.scss";
 import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
 import { HeaderDropdown } from "./HeaderDropdown/HeaderDropdown";
+import { movieData } from "./HeaderDropdown/lib/movieData";
+import { serialData } from "./HeaderDropdown/lib/serialData";
+import { multData } from "./HeaderDropdown/lib/multData";
 
 export const Header: FC = () => (
   <header className={styles.header}>
@@ -29,19 +32,31 @@ export const Header: FC = () => (
           </Link>
         </li>
         <li>
-          <Link className={styles.link} href="/movies">
+          <Link className={cn(styles.link, styles.link_movies)} href="/movies">
             Фильмы
           </Link>
+          <HeaderDropdown
+            data={movieData}
+            className={cn(styles.dropdown, styles.dropdown_serial)}
+          />
         </li>
         <li>
           <Link className={styles.link} href="#">
             Сериалы
           </Link>
+          <HeaderDropdown
+            data={serialData}
+            className={cn(styles.dropdown, styles.dropdown_serial)}
+          />
         </li>
         <li>
           <Link className={styles.link} href="#">
             Мультфильмы
           </Link>
+          <HeaderDropdown
+            data={multData}
+            className={cn(styles.dropdown, styles.dropdown_serial)}
+          />
         </li>
         <li>
           <Link className={styles.link} href="https://www.ivi.ru/tvplus">
@@ -54,7 +69,6 @@ export const Header: FC = () => (
       <Link className={styles.subscriptionButton} href="#">
         Оплатить подписку
       </Link>
-
       <Link className={cn(styles.link, styles.link_search)} href="#">
         <div className={cn(styles.icon, styles.icon_search)}></div> Поиск
       </Link>
@@ -66,6 +80,5 @@ export const Header: FC = () => (
       <div className={cn(styles.icon, styles.icon_auth)}></div>
     </Link>
     <HeaderMobile />
-    <HeaderDropdown />
   </header>
 );

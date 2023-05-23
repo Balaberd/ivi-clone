@@ -5,6 +5,8 @@
 }
 
 @mixin font-icon($iconName) {
+  font-family: IconFont;
+
   @if $iconName == "sadMask" {
     &::before {
       content: "\E182";
@@ -152,6 +154,52 @@
     }
     &::after {
       content: "\E1EF";
+    }
+  }
+
+  @if $iconName == "heart" {
+    &::before {
+      content: "\E21D";
+    }
+  }
+
+  @if $iconName == "check" {
+    &::before {
+      font-weight: 700;
+      content: "\E37D";
+    }
+  }
+
+  @if $iconName == "music" {
+    &::before {
+      content: "\E1C8";
+    }
+    &::after {
+      content: "\E1C7";
+    }
+  }
+
+  @if $iconName == "mult" {
+    &::before {
+      content: "\E16A";
+    }
+    &::after {
+      content: "\E169";
+    }
+  }
+
+  @if $iconName == "column" {
+    &::before {
+      content: "\E1A2";
+    }
+    &::after {
+      content: "\E1A3";
+    }
+  }
+
+  @if $iconName == "arrow-down" {
+    &::before {
+      content: "\E033";
     }
   }
 }

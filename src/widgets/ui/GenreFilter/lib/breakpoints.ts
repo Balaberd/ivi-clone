@@ -5,3 +5,8 @@ export const breakpoints = {
   745: { slidesPerView: 4, slidesPerGroup: 3 },
   0: { slidesPerView: 3, slidesPerGroup: 2 },
 };
+
+export const dropdownBreakpoints = {
+  745: { slidesPerView: 5, slidesPerGroup: 2 },
+  0: { slidesPerView: 3, slidesPerGroup: 1 },
+};

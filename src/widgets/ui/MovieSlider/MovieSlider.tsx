@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Slider } from "@/shared/ui/Slider/Slider";
 import { MovieCard } from "@/entities";
-import { useGetMoviesQuery } from "@/app-fsd/model/movie/movie.api";
-import { TMovieQueryParams } from "@/app-fsd/model/movie/movie.types";
+import { useGetMoviesQuery } from "@/entities/movie/model/movie.api";
+import { TMovieQueryParams } from "@/entities/movie/model/movie.types";
 import { breakpoints } from "./lib/breakpoints";
 
 interface Props {

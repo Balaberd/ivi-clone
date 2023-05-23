@@ -19,7 +19,7 @@ export const Poster: FC<Props> = ({
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
   const isValidAndLoaded = isImageLoaded && !!imageUrl.trim();
   const validUrl =
-    !!imageUrl.trim() && imageUrl.startsWith("https://")
+    !!imageUrl.trim() && imageUrl.startsWith("http")
       ? imageUrl
       : `https://${imageUrl}`;
   return (

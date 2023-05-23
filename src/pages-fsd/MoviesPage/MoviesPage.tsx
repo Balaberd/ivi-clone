@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { TagFilter, GenreFilter, MainFilter, MoviesList } from "@/widgets";
+import { GenreFilter, MainFilter, MoviesList } from "@/widgets";
 import { ExpandedBlock } from "@/shared";
+import { TagFilter } from "@/entities";
 import styles from "./MoviesPage.module.scss";
 
 export const MoviesPage: FC = () => (
@@ -45,7 +46,11 @@ export const MoviesPage: FC = () => (
         тогда, когда вам это удобно. Ведь это так просто и приятно!
       </p>
     </ExpandedBlock>
-    <TagFilter />
+    <TagFilter
+      countries={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+      genres={[3, 7]}
+      years={[]}
+    />
     <MainFilter />
     <GenreFilter />
     <MoviesList />
