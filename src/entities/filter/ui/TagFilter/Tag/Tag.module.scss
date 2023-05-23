@@ -1,0 +1,22 @@
+@import "../../../../../shared/index.scss";
+
+.tag {
+  padding: 6px 16px;
+  border-radius: 16px;
+
+  @include set-font(15px, 20px, 700);
+  @extend %template-link-button;
+  color: $color-axum;
+
+  transition: 0.2s;
+
+  &_hasBorder {
+    border: 1px solid $color-axum;
+    background: none;
+  }
+
+  &_active {
+    background-color: $color-axum;
+    color: $color-sofia;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../../../../shared/index.scss";
+
+.trigger {
+  width: 100%;
+  padding: 8px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $color-sofia;
+
+  font-size: 100%;
+
+  background-color: $color-berbera;
+  border-radius: 4px;
+
+  @include set-font(15px, 20px, 500);
+
+  &_active {
+    background-color: $color-dublin;
+    .icon {
+      transform: rotate(0);
+    }
+  }
+}
+
+.icon {
+  @include font-icon("arrow-down");
+  font-size: 6px;
+  transform: rotateX(180deg);
+  transition: 0.2s;
+}
+
+.wrapper {
+  padding: 16px;
+
+  position: absolute;
+  top: 45px;
+  left: 0;
+
+  background-color: $color-berbera;
+
+  border-radius: 4px;
+
+  z-index: 5;
+}

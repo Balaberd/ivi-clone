@@ -6,3 +6,5 @@ export { Dropdown } from "./ui/Dropdown/Dropdown";
 export { ExpandedBlock } from "./ui/ExpandedBlock/ExpandedBlock";
 export { Slider } from "./ui/Slider/Slider";
 export { SliderButtons } from "./ui/SliderButtons/SliderButtons";
+export { Checkbox } from "./ui/Checkbox/Checkbox";
+export { Radio } from "./ui/Radio/Radio";

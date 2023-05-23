@@ -6,29 +6,22 @@ import styles from "./BannerCard.module.scss";
 
 interface Props {
   id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
+  name: string;
+  text: string;
+  promo?: string;
   className?: string;
-  isLoading?: boolean;
 }
 
-export const BannerCard: FC<Props> = ({
-  id,
-  className,
-  imageUrl,
-  title,
-  description,
-}) => (
+export const BannerCard: FC<Props> = ({ id, className, promo, name, text }) => (
   <Link href={`/movies/${id}`}>
     <Poster
       classNames={cn(styles.poster, className)}
-      imageUrl={`https://${imageUrl}`}
-      title={title}
+      imageUrl={promo || ""}
+      title={name}
     >
       <div className={styles.content}>
-        <h4 className={styles.title}>{title}</h4>
-        <p className={styles.description}>{description}</p>
+        <h4 className={styles.title}>{name}</h4>
+        <p className={styles.description}>{text}</p>
         <div className={styles.button}>Смотреть бесплатно</div>
       </div>
     </Poster>

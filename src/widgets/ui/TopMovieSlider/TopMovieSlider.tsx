@@ -2,20 +2,11 @@ import { FC } from "react";
 import Image from "next/image";
 import { TopMovieCard } from "@/entities/movie/ui/TopMovieCard/TopMovieCard";
 import { Slider } from "@/shared/ui/Slider/Slider";
-import { useGetTopMoviesQuery } from "@/app-fsd/model/movie/movie.api";
+import { useGetTopMoviesQuery } from "@/entities/movie/model/movie.api";
 import { breakpoints } from "./lib/breakpoints";
 
 export const TopMovieSlider: FC = () => {
   const { data } = useGetTopMoviesQuery({ limit: 10 });
-
-  let movies;
-  if (data) {
-    movies = data.map(({ id, avatars, name }) => ({
-      id,
-      title: name,
-      imageUrl: avatars,
-    }));
-  }
 
   const title = (
     <>
@@ -30,8 +21,8 @@ export const TopMovieSlider: FC = () => {
   );
   return (
     <Slider title={title} breakpoints={breakpoints} spaceBetween={24}>
-      {movies &&
-        movies.map((el, ind) => (
+      {data &&
+        data.map((el, ind) => (
           <TopMovieCard ratingInTop={ind + 1} key={ind} {...el} />
         ))}
     </Slider>
