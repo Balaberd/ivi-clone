@@ -36,7 +36,7 @@ export const MainPage: FC = () => (
           Активировать сертификат
         </Link>
       </section>
-      <MovieSlider sliderTitle="Комедии" params={{ genre: "комедия" }} />
+      <MovieSlider sliderTitle="Драмы" params={{ genre: 1 }} />
       <ExpandedBlock
         className={styles.aboutBlock}
         title="Онлайн-кинотеатр Иви: фильмы в хорошем качестве всегда приносят настоящее удовольствие"
@@ -101,24 +101,27 @@ export const MainPage: FC = () => (
           отличном качестве с кинотеатром Иви!
         </p>
       </ExpandedBlock>
-      <MovieSlider sliderTitle="спорт" params={{ genre: "спорт" }} />
+      <MovieSlider sliderTitle="Криминал" params={{ genre: 2 }} />
       <TopMovieSlider />
-      <MovieSlider sliderTitle="биография" params={{ genre: "биография" }} />
-      <MovieSlider sliderTitle="вестерн" params={{ genre: "вестерн" }} />
-      <MovieSlider sliderTitle="криминал" params={{ genre: "криминал" }} />
-      <MovieSlider sliderTitle="военный" params={{ genre: "военный" }} />
-      <MovieSlider sliderTitle="ужасы" params={{ genre: "ужасы" }} />
-      <MovieSlider sliderTitle="детектив" params={{ genre: "детектив" }} />
-      <MovieSlider sliderTitle="семейный" params={{ genre: "семейный" }} />
-      <MovieSlider sliderTitle="фэнтези" params={{ genre: "фэнтези" }} />
-      <MovieSlider sliderTitle="фантастика" params={{ genre: "фантастика" }} />
-      <MovieSlider sliderTitle="мелодрама" params={{ genre: "мелодрама" }} />
-      <MovieSlider
-        sliderTitle="приключения"
-        params={{ genre: "приключения" }}
-      />
-      <MovieSlider sliderTitle="триллер" params={{ genre: "триллер" }} />
-      <MovieSlider sliderTitle="драма" params={{ genre: "драма" }} />
+      <MovieSlider sliderTitle="Мультфильмы" params={{ genre: 3 }} />
+      <MovieSlider sliderTitle="Фантастика" params={{ genre: 4 }} />
+      <MovieSlider sliderTitle="Боевики" params={{ genre: 5 }} />
+      <MovieSlider sliderTitle="Комедии" params={{ genre: 6 }} />
+      <MovieSlider sliderTitle="Фэнтези" params={{ genre: 7 }} />
+      <MovieSlider sliderTitle="Детективы" params={{ genre: 8 }} />
+      <MovieSlider sliderTitle="Триллеры" params={{ genre: 9 }} />
+      <MovieSlider sliderTitle="Биография" params={{ genre: 10 }} />
+      <MovieSlider sliderTitle="Мелодрамы" params={{ genre: 11 }} />
+      <MovieSlider sliderTitle="Вестерны" params={{ genre: 12 }} />
+      <MovieSlider sliderTitle="Музыкальные" params={{ genre: 13 }} />
+      <MovieSlider sliderTitle="История" params={{ genre: 14 }} />
+      <MovieSlider sliderTitle="Приключения" params={{ genre: 15 }} />
+      <MovieSlider sliderTitle="Аниме" params={{ genre: 16 }} />
+      <MovieSlider sliderTitle="Ужасы" params={{ genre: 17 }} />
+      <MovieSlider sliderTitle="Мюзиклы" params={{ genre: 18 }} />
+      <MovieSlider sliderTitle="Военные" params={{ genre: 19 }} />
+      <MovieSlider sliderTitle="Спортивные" params={{ genre: 20 }} />
+      <MovieSlider sliderTitle="Семейные" params={{ genre: 21 }} />
 
       <div className={styles.watchTV}>
         <p>Смотри телеканалы* круглосуточно, непрерывно и бесплатно.</p>

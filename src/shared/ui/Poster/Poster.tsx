@@ -6,7 +6,7 @@ import styles from "./Poster.module.scss";
 interface Props {
   imageUrl: string;
   title: string;
-  children?: ReactElement;
+  children: ReactElement;
   classNames?: string;
 }
 
@@ -19,7 +19,7 @@ export const Poster: FC<Props> = ({
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
   const isValidAndLoaded = isImageLoaded && !!imageUrl.trim();
   const validUrl =
-    !!imageUrl.trim() && imageUrl.startsWith("https://")
+    !!imageUrl.trim() && imageUrl.startsWith("http")
       ? imageUrl
       : `https://${imageUrl}`;
   return (

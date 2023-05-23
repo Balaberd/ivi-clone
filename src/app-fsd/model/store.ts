@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { movieApi } from "./movie/movie.api";
-import filter from "./filter/filterSlice";
+import { filterSlice } from "@/entities";
+import { movieApi } from "../../entities/movie/model/movie.api";
 
 const rootReducer = combineReducers({
-  filter,
+  filter: filterSlice.reducer,
   [movieApi.reducerPath]: movieApi.reducer,
 });
 

@@ -1,0 +1,76 @@
+@import "../../index.scss";
+
+.radio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba($color-tbilisi, $opacity-sedra);
+
+  cursor: pointer;
+
+  @include set-font(13px, 16px, 500);
+
+  &:hover {
+    .icon {
+      visibility: visible;
+    }
+  }
+
+  &_checked {
+    color: $color-sofia;
+
+    .icon {
+      visibility: visible;
+      opacity: $opacity-imi;
+    }
+
+    & .icon::before {
+      visibility: visible;
+    }
+  }
+
+  &_disabled {
+    color: rgba($color-tbilisi, $opacity-pake);
+  }
+
+  &:hover {
+    color: $color-sofia;
+  }
+}
+
+.checkbox {
+  visibility: hidden;
+}
+
+.icon {
+  visibility: hidden;
+  position: relative;
+
+  width: 16px;
+  height: 16px;
+
+  opacity: $opacity-akbu;
+
+  border: 2px solid $color-sofia;
+  border-radius: 50%;
+
+  &::before {
+    visibility: hidden;
+
+    min-width: 4px;
+    min-height: 4px;
+
+    content: "";
+
+    position: absolute;
+    top: calc(50% - 2px);
+    left: calc(50% - 2px);
+
+    border-radius: 50%;
+
+    // background-color: rgba($color-tbilisi, $opacity-sedra);
+    background-color: $color-sofia;
+  }
+}
