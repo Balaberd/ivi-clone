@@ -4,7 +4,7 @@ import styles from "./ExpandedBlock.module.scss";
 
 interface Props {
   title: string;
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
   className?: string;
 }
 

@@ -1,4 +1,4 @@
-import { FC, ReactElement, useRef } from "react";
+import { FC, ReactElement, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType, Navigation } from "swiper";
 import cn from "classnames";
@@ -33,6 +33,14 @@ export const Slider: FC<Props> = ({
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
 
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handleSwiper = (swiper: SwiperType) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
   return (
     <div className={styles.slider}>
       <div className={styles.title}>{title}</div>
@@ -41,17 +49,22 @@ export const Slider: FC<Props> = ({
           swiperRef={swiperRef}
           prev={prevButtonRef}
           next={nextButtonRef}
-          nextButtonClassName={buttonsClassName}
-          prevButtonClassName={buttonsClassName}
+          prevButtonClassName={cn(buttonsClassName, {
+            [styles.unvisible]: isBeginning,
+          })}
+          nextButtonClassName={cn(buttonsClassName, {
+            [styles.unvisible]: isEnd,
+          })}
         />
       )}
       <Swiper
         modules={[Navigation]}
-        speed={1000}
+        speed={800}
         allowSlideNext={!disabled}
         allowSlidePrev={!disabled}
         spaceBetween={24}
         wrapperClass={cn(styles.sliderWrapper, wrapperClass)}
+        onSwiper={handleSwiper}
         {...props}
         navigation={{
           prevEl: prevButtonRef.current,

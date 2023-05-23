@@ -1,0 +1,20 @@
+@import "../../../../../shared/index.scss";
+
+.yarsDropdown {
+  width: 195px;
+
+  margin-top: -16px;
+}
+
+.list {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  row-gap: 12px;
+
+  .item {
+    display: inline-block;
+    width: 100%;
+  }
+}

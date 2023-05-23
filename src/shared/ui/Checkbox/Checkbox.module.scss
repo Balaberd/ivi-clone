@@ -1,0 +1,39 @@
+@import "../../index.scss";
+
+.custonCheckbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba($color-tbilisi, $opacity-sedra);
+
+  cursor: pointer;
+
+  @include set-font(13px, 16px, 500);
+
+  &_checked {
+    color: $color-sofia;
+  }
+
+  &_disabled {
+    color: rgba($color-tbilisi, $opacity-pake);
+  }
+
+  &:hover {
+    color: $color-sofia;
+  }
+}
+
+.checkbox {
+  visibility: hidden;
+
+  &:checked ~ .icon {
+    display: inline;
+  }
+}
+
+.icon {
+  display: none;
+  @include font-icon("check");
+}

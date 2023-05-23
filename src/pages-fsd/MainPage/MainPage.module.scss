@@ -37,15 +37,30 @@
 
     border-radius: 8px;
 
-    &_subscription {
-    }
     background-color: $color-varna;
 
+    transition: 0.2s;
+
+    &_subscription {
+      background-image: url("https://solea-parent.dfs.ivi.ru/picture/bypass/teaserTilePattern_a.svg");
+      background-size: auto 48px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
     &_certificate {
+    }
+
+    &:hover {
+      background-color: $color-harn;
     }
   }
 }
 
 .watchTV {
   color: $color-tbilisi;
+
+  & p {
+    margin-bottom: 16px;
+  }
 }

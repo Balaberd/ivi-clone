@@ -1,0 +1,158 @@
+@import "../../../../shared/index.scss";
+
+.genreCard {
+  width: 100%;
+  padding: 24px 8px;
+
+  @extend %template-link-button;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    padding: 16px 8px;
+  }
+
+  &_dropdown {
+    background: none;
+    border: 1px solid rgba($color-tbilisi, $opacity-sedra);
+    padding: 16px 8px;
+
+    &:hover {
+      background-color: $color-dublin;
+    }
+  }
+
+  &_active {
+    background-color: $color-berbera;
+    &.genreCard_dropdown {
+      background-color: $color-dublin;
+    }
+  }
+}
+
+.imageWrapper {
+  width: 32px;
+  height: 32px;
+
+  position: relative;
+
+  font-family: IconFont !important;
+  font-size: 32px;
+
+  &::before {
+    color: $color-dublin;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    color: $color-madrid;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &_dropdown {
+    &::before {
+      color: $color-sofia;
+    }
+    &::after {
+      color: $color-sofia;
+    }
+  }
+}
+
+.title {
+  margin-top: 8px;
+  @include set-font(15px, 20px, 500);
+  color: $color-sofia;
+
+  &_dropdown {
+    @include set-font(13px, 16px, 500);
+  }
+}
+
+.drama {
+  @include font-icon("sadMask");
+}
+
+.comedy {
+  @include font-icon("smileMask");
+}
+
+.action {
+  @include font-icon("weapon");
+}
+
+.horror {
+  @include font-icon("knife");
+}
+
+.adventures {
+  @include font-icon("map");
+}
+
+.foreign {
+  @include font-icon("globus");
+}
+
+.melodramas {
+  @include font-icon("hearts");
+}
+
+.fantastic {
+  @include font-icon("alian");
+}
+
+.fantasy {
+  @include font-icon("wizardHat");
+}
+
+.family {
+  @include font-icon("family");
+}
+
+.detective {
+  @include font-icon("detective");
+}
+
+.military {
+  @include font-icon("tank");
+}
+
+.crime {
+  @include font-icon("crime");
+}
+
+.western {
+  @include font-icon("western");
+}
+
+.biography {
+  @include font-icon("biography");
+}
+
+.sport {
+  @include font-icon("sport");
+}
+
+.triller {
+  @include font-icon("ghost");
+}
+
+.music {
+  @include font-icon("music");
+}
+
+.mult {
+  @include font-icon("mult");
+}
+
+.history {
+  @include font-icon("column");
+}

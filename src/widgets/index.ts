@@ -1,8 +1,10 @@
-export { TopMovieSlider } from "./ui/TopMovieSlider/TopMovieSlider";
-export { BannerSlider } from "./ui/BannerSlider/BannerSlider";
-export { MovieSlider } from "./ui/MovieSlider/MovieSlider";
-export { Header } from "./ui/Header/Header";
-export { HeaderMobile } from "./ui/Header/HeaderMobile/HeaderMobile";
+// eslint-disable-next-line import/no-cycle
 export { MainFilter } from "./ui/MainFilter/MainFilter";
-export { FilterByTag } from "./ui/FilterByTag/FilterByTag";
+export { BannerSlider } from "./ui/BannerSlider/BannerSlider";
+export { GenreFilter } from "./ui/GenreFilter/GenreFilter";
 export { Footer } from "./ui/Footer/Footer";
+export { Header } from "./ui/Header/Header";
+export { MovieSlider } from "./ui/MovieSlider/MovieSlider";
+export { PersonSlider } from "./ui/PersonSlider/PersonSlider";
+export { TopMovieSlider } from "./ui/TopMovieSlider/TopMovieSlider";
+export { MoviesList } from "./ui/MoviesList/MoviesList";
