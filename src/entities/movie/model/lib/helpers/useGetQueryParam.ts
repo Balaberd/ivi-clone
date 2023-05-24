@@ -1,10 +1,10 @@
 import { TMovieQueryParams } from "../../movie.types";
 
 export const getQueryParam = ({
-  country,
-  genre,
-  year,
-  rating,
+  country = [],
+  genre = [],
+  year = null,
+  rating = null,
 }: TMovieQueryParams): string => {
   const countrySlice = country.length ? `&country=${country}` : "";
   const genreSlice = genre.length ? `&genre=${genre}` : "";

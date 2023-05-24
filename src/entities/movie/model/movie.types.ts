@@ -2,10 +2,10 @@ import { TCountryId, TGenreId } from "@/entities/filter/const/filteres";
 
 export type TMovieQueryParams = {
   limit?: number;
-  genre: Array<TGenreId>;
-  country: Array<TCountryId>;
-  rating?: Array<number>;
-  year: number | null;
+  genre?: Array<TGenreId>;
+  country?: Array<TCountryId>;
+  rating?: number | null;
+  year?: number | null;
 };
 
 type TPerson = {
