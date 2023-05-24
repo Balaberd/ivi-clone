@@ -2,10 +2,12 @@
 
 .mainFilter {
   padding: 16px;
-
   background-color: $color-varna;
-
   border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .firstRow {

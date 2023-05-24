@@ -1,4 +1,4 @@
-export const serialData = {
+export const serialsMock = {
   genres: [
     { title: "Боевики", path: "https://www.ivi.ru/series/boeviki" },
     { title: "Боевики", path: "https://www.ivi.ru/series/boeviki" },

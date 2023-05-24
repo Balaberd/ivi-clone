@@ -6,8 +6,8 @@ import {
   TCountryId,
 } from "@/entities/filter/const/filteres";
 import { toggleCountryFilter } from "@/entities/filter/model/filterSlice";
+import { TagFilter } from "@/features/ui/TagFilter/TagFilter";
 import styles from "./CountryDropdown.module.scss";
-import { TagFilter } from "../../TagFilter/TagFilter";
 
 export const CountryDropdown: FC = () => {
   const countriesIds: Array<TCountryId> = Object.values(
@@ -26,12 +26,7 @@ export const CountryDropdown: FC = () => {
   return (
     <div className={styles.countryDropdown}>
       <div className={styles.sliderWrapper}>
-        <TagFilter
-          isDropdown={true}
-          activeCountries={activeFilterCountries}
-          countriesList={countriesIds}
-          onToggleCountry={toggleCountryFilterHandler}
-        />
+        <TagFilter isDropdown={true} countriesList={countriesIds} />
       </div>
       <ul className={styles.list}>
         {countriesIds.map((id) => (

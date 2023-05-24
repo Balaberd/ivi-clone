@@ -202,4 +202,10 @@
       content: "\E033";
     }
   }
+
+  @if $iconName == "close" {
+    &::before {
+      content: "\E092";
+    }
+  }
 }

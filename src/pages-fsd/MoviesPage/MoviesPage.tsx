@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { GenreFilter, MainFilter, MoviesList } from "@/widgets";
+import { MainFilter, MoviesList } from "@/widgets";
 import { ExpandedBlock } from "@/shared";
-import { TagFilter } from "@/entities";
+import { GenreFilter } from "@/features/ui/GenreFilter/GenreFilter";
+import { TagFilter } from "@/features/ui/TagFilter/TagFilter";
 import styles from "./MoviesPage.module.scss";
 
 export const MoviesPage: FC = () => (
@@ -47,9 +48,9 @@ export const MoviesPage: FC = () => (
       </p>
     </ExpandedBlock>
     <TagFilter
-      countries={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-      genres={[3, 7]}
-      years={[]}
+      countriesList={[1, 2, 4]}
+      genresList={[3, 7, 1, 5, 2, 10]}
+      yearsList={[2023, 2022, 2021, 2020, 2019]}
     />
     <MainFilter />
     <GenreFilter />

@@ -40,12 +40,25 @@ export const filterSlice = createSlice({
       state.country.push(action.payload);
     },
     toggleYearFilter(state: TFilter, action: PayloadAction<number | null>) {
-      // eslint-disable-next-line no-param-reassign
-      state.year = action.payload;
+      if (state.year === action.payload) {
+        // eslint-disable-next-line no-param-reassign
+        state.year = null;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        state.year = action.payload;
+      }
     },
     toggleRatingFilter(state: TFilter, action: PayloadAction<number | null>) {
-      // eslint-disable-next-line no-param-reassign
-      state.rating = action.payload;
+      if (state.rating === action.payload) {
+        // eslint-disable-next-line no-param-reassign
+        state.rating = null;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        state.rating = action.payload;
+      }
+    },
+    resetFilter() {
+      return initialState;
     },
   },
 });
@@ -55,5 +68,6 @@ export const {
   toggleCountryFilter,
   toggleYearFilter,
   toggleRatingFilter,
+  resetFilter,
 } = filterSlice.actions;
 export default filterSlice.reducer;
