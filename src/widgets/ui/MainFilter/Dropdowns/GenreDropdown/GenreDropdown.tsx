@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { Checkbox } from "@/shared";
-// eslint-disable-next-line import/no-cycle
-import { GenreFilter } from "@/widgets";
 import { useAppDispatch, useAppSelector } from "@/app-fsd/model/hooks/redux";
 import { FILTER_COLLECTION, TGenreId } from "@/entities/filter/const/filteres";
 import { toggleGenreFilter } from "@/entities/filter/model/filterSlice";
+import { GenreFilter } from "@/features";
 import styles from "./GenreDropdown.module.scss";
 
 export const GenreDropdown: FC = () => {

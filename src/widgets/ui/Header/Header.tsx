@@ -5,9 +5,9 @@ import cn from "classnames";
 import styles from "./Header.module.scss";
 import { HeaderMobile } from "./HeaderMobile/HeaderMobile";
 import { HeaderDropdown } from "./HeaderDropdown/HeaderDropdown";
-import { movieData } from "./HeaderDropdown/lib/movieData";
-import { serialData } from "./HeaderDropdown/lib/serialData";
-import { multData } from "./HeaderDropdown/lib/multData";
+import { moviesMock } from "./HeaderDropdown/lib/moviesMock";
+import { serialsMock } from "./HeaderDropdown/lib/serialsMock";
+import { multsMock } from "./HeaderDropdown/lib/multsMock";
 
 export const Header: FC = () => (
   <header className={styles.header}>
@@ -36,7 +36,7 @@ export const Header: FC = () => (
             Фильмы
           </Link>
           <HeaderDropdown
-            data={movieData}
+            data={moviesMock}
             className={cn(styles.dropdown, styles.dropdown_serial)}
           />
         </li>
@@ -45,7 +45,7 @@ export const Header: FC = () => (
             Сериалы
           </Link>
           <HeaderDropdown
-            data={serialData}
+            data={serialsMock}
             className={cn(styles.dropdown, styles.dropdown_serial)}
           />
         </li>
@@ -54,7 +54,7 @@ export const Header: FC = () => (
             Мультфильмы
           </Link>
           <HeaderDropdown
-            data={multData}
+            data={multsMock}
             className={cn(styles.dropdown, styles.dropdown_serial)}
           />
         </li>

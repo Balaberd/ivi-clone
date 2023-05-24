@@ -1,0 +1,19 @@
+@import "../../../shared/index.scss";
+.resetFilterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: $color-sofia;
+  opacity: $opacity-akbu;
+
+  @include set-font(15px, 20px, 500);
+
+  &_active {
+    cursor: pointer;
+    opacity: $opacity-imi;
+  }
+}
+.icon {
+  @include font-icon("close");
+}

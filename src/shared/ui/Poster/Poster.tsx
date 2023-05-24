@@ -18,14 +18,16 @@ export const Poster: FC<Props> = ({
 }) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
   const isValidAndLoaded = isImageLoaded && !!imageUrl.trim();
-  const validUrl =
-    !!imageUrl.trim() && imageUrl.startsWith("http")
-      ? imageUrl
-      : `https://${imageUrl}`;
+  const validUrl = imageUrl.startsWith("https")
+    ? imageUrl
+    : `https://${imageUrl}`;
+
   return (
     <div className={cn(styles.poster, classNames)} data-testid="custom-element">
       <Image
-        className={cn(styles.image, { [styles.unvisible]: !isValidAndLoaded })}
+        className={cn(styles.image, {
+          [styles.unvisible]: !isValidAndLoaded,
+        })}
         src={validUrl}
         alt={`постер фильма/актера ${title}`}
         fill

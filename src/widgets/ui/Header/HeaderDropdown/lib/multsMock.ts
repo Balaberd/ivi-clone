@@ -1,4 +1,4 @@
-export const multData = {
+export const multsMock = {
   genres: [
     { title: "Аниме", path: "https://www.ivi.ru/animation/anime/page2" },
     { title: "Боевик", path: "https://www.ivi.ru/animation/militants" },

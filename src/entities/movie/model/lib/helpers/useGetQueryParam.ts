@@ -10,5 +10,5 @@ export const getQueryParam = ({
   const genreSlice = genre.length ? `&genre=${genre}` : "";
   const yearSlice = year ? `&years=${year}` : "";
   const ratingSlice = rating ? `&rating=${rating}` : "";
-  return `?${countrySlice}${genreSlice}${yearSlice}${ratingSlice}`;
+  return `?page=1${countrySlice}${genreSlice}${yearSlice}${ratingSlice}`;
 };

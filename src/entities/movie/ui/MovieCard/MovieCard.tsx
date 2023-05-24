@@ -3,9 +3,9 @@ import cn from "classnames";
 import { Poster } from "@/shared";
 import Link from "next/link";
 import { Card } from "@/shared/ui/Card/Card";
-import { IMovie } from "@/app-fsd/model/movie/movie.types";
 import styles from "./MovieCard.module.scss";
 import { MovieCardContent } from "./MovieCardContent/MovieCardContent";
+import { IMovie } from "../../model/movie.types";
 
 export const MovieCard: FC<IMovie> = ({
   id,
@@ -17,11 +17,7 @@ export const MovieCard: FC<IMovie> = ({
 }) => (
   <Link className={styles.movieCard} href={`/movies/${id}`}>
     <Card title={name} subtitle={"Беслпатно"}>
-      <Poster
-        classNames={cn(styles.poster)}
-        imageUrl={`https://${avatars}`}
-        title={name}
-      >
+      <Poster classNames={cn(styles.poster)} imageUrl={avatars} title={name}>
         <MovieCardContent
           genre={genre.value}
           country={country.value}
