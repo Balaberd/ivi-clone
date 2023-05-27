@@ -8,3 +8,4 @@ export { Slider } from "./ui/Slider/Slider";
 export { SliderButtons } from "./ui/SliderButtons/SliderButtons";
 export { Checkbox } from "./ui/Checkbox/Checkbox";
 export { Radio } from "./ui/Radio/Radio";
+export { Input } from "./ui/Input/Input";

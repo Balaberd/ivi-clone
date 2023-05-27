@@ -1,0 +1,56 @@
+@import "../../index.scss";
+
+.customInput {
+  padding: 2px 12px;
+  background-color: $color-tbilisi;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  @include set-font(15px, 20px, 500);
+
+  color: $color-axum;
+
+  &:hover {
+    color: rgba($color-london, $opacity-pake);
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+  padding-top: 16px;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  @include set-font(15px, 20px, 500);
+
+  &_active ~ .placeholder {
+    transform: translate3d(-2px, -9px, 0) scale(0.87) perspective(1px);
+  }
+
+  &:focus ~ .placeholder {
+    transform: translate3d(-2px, -9px, 0) scale(0.87) perspective(1px);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  color: $color-axum;
+
+  transition: 0.4s;
+}

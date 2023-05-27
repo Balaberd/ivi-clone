@@ -1,0 +1,23 @@
+@import "./../../../../shared/index.scss";
+
+.link {
+  @include set-font(13px, 16px, 500);
+  color: rgba($color-sofia, $opacity-imi);
+
+  transition-duration: 0.8s;
+  box-shadow: 0 2px 0 $color-dublin, inset 0 0 0 $color-dublin;
+  &:hover {
+    box-shadow: 0 0 0 $color-dublin, inset 0 -1.5em 0 $color-dublin;
+  }
+
+  &_disabled {
+    cursor: auto;
+    color: rgba($color-sofia, $opacity-zeton);
+
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
