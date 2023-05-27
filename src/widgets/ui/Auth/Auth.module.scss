@@ -1,0 +1,37 @@
+@import "./../../../../shared/index.scss";
+
+.auth {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 700px;
+
+  @media (max-width: 600px) {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+}
+
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+
+  .button {
+    color: $color-sofia;
+    opacity: $opacity-akbu;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    @include set-font(18px, 22px, 700);
+
+    &_active {
+      opacity: $opacity-imi;
+    }
+  }
+}
+
+.formsWrapper {
+  margin-top: 50px;
+  position: relative;
+}

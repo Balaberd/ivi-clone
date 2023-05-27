@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { MainFilter, MoviesList } from "@/widgets";
+import { Breadcrumbs, MainFilter, MoviesList } from "@/widgets";
 import { ExpandedBlock } from "@/shared";
 import { GenreFilter } from "@/features/ui/GenreFilter/GenreFilter";
 import { TagFilter } from "@/features/ui/TagFilter/TagFilter";
@@ -7,6 +7,7 @@ import styles from "./MoviesPage.module.scss";
 
 export const MoviesPage: FC = () => (
   <div className={styles.moviesPage}>
+    <Breadcrumbs />
     <ExpandedBlock className={styles.infoBlock} title="Фильмы смотреть онлайн">
       <p>
         Вы любите смотреть фильмы онлайн и проводите много времени, прочесывая

@@ -24,6 +24,10 @@
     padding-left: 12px;
   }
 
+  &_authorized {
+    opacity: $opacity-imi;
+  }
+
   &:hover ~ .dropdown {
     visibility: visible;
     z-index: -1;
@@ -111,5 +115,9 @@
     &::before {
       content: "\E051";
     }
+  }
+
+  &_authorized {
+    background-color: $color-sberbank;
   }
 }

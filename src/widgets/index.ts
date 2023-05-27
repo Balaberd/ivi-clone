@@ -6,3 +6,4 @@ export { MovieSlider } from "./ui/MovieSlider/MovieSlider";
 export { PersonSlider } from "./ui/PersonSlider/PersonSlider";
 export { TopMovieSlider } from "./ui/TopMovieSlider/TopMovieSlider";
 export { MoviesList } from "./ui/MoviesList/MoviesList";
+export { Breadcrumbs } from "./ui/Breadcrumbs/Breadcrumbs";
