@@ -3,8 +3,8 @@ import cn from "classnames";
 import styles from "./ExpandedBlock.module.scss";
 
 interface Props {
-  title: string;
-  children: ReactElement | ReactElement[];
+  title?: string;
+  children: ReactElement | ReactElement[] | string;
   className?: string;
 }
 

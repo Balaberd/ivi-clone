@@ -214,4 +214,16 @@
       content: "\E050";
     }
   }
+
+  @if $iconName == "play" {
+    &::before {
+      content: "\E290";
+    }
+  }
+
+  @if $iconName == "bookmark" {
+    &::before {
+      content: "\E12F";
+    }
+  }
 }

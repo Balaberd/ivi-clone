@@ -7,13 +7,13 @@ import styles from "./PersonCard.module.scss";
 import howMuchMovies from "./helpers/howMuchMovies";
 
 interface Props {
-  imageUrl: string;
+  avatar: string;
   id: number;
   title: string;
   subtitle: string | number;
 }
 
-export const PersonCard: FC<Props> = ({ imageUrl, title, subtitle }) => {
+export const PersonCard: FC<Props> = ({ avatar, title, subtitle }) => {
   const isListElement = typeof subtitle === "number";
   const subtitleValue = isListElement ? howMuchMovies(subtitle) : `${subtitle}`;
   return (
@@ -26,11 +26,7 @@ export const PersonCard: FC<Props> = ({ imageUrl, title, subtitle }) => {
         })}
       >
         <div className={styles.posterWrapper}>
-          <Poster
-            classNames={styles.poster}
-            imageUrl={imageUrl}
-            title={title}
-          />
+          <Poster classNames={styles.poster} imageUrl={avatar} title={title} />
           {isListElement && <div className={styles.label}>{subtitle}</div>}
         </div>
       </Card>
