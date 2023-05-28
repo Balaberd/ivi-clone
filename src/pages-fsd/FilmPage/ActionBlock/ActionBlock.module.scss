@@ -1,0 +1,42 @@
+@import "../../../shared/index.scss";
+
+.actionsBlock {
+  margin-top: 24px;
+
+  display: flex;
+  gap: 16px;
+}
+
+.actionButton {
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 8px;
+
+  color: $color-axum;
+  background-color: rgba($color-sofia, $opacity-jabe);
+  @include set-font(15px, 20px, 500);
+
+  transition: 0.2s;
+
+  &:hover {
+    background-color: rgba($color-sofia, $opacity-bana);
+  }
+}
+
+.icon {
+  &_play {
+    @include font-icon("play");
+  }
+
+  &_bookmark {
+    @include font-icon("bookmark");
+  }
+
+  &_download {
+    @include font-icon("heart");
+  }
+}

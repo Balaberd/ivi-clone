@@ -1,0 +1,10 @@
+@import "./../../../../shared/index.scss";
+
+.actorsBlock {
+  display: flex;
+  justify-content: space-around;
+
+  .ratingIcon {
+    @include set-font(15px, 20px, 500);
+  }
+}

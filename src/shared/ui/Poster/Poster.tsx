@@ -6,7 +6,7 @@ import styles from "./Poster.module.scss";
 interface Props {
   imageUrl: string;
   title: string;
-  children: ReactElement;
+  children?: ReactElement;
   classNames?: string;
 }
 

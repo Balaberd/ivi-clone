@@ -1,8 +1,5 @@
-import { useRouter } from "next/router";
+import { FilmPage } from "@/pages-fsd";
 
-const MoviePage = () => {
-  const { query } = useRouter();
-  return <h1>СТРАНИЦА ФИЛЬМА С ID {query.id}</h1>;
-};
+const filmPage = () => <FilmPage />;
 
-export default MoviePage;
+export default filmPage;

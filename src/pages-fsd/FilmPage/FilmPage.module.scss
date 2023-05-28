@@ -1,0 +1,48 @@
+@import "./../../shared/index.scss";
+
+.filmPage {
+  @extend %template-container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+
+  .playerBlock {
+    width: 58%;
+    height: 100%;
+
+    position: sticky;
+    left: 0;
+    top: 0;
+
+    @media (max-width: 1160px) {
+      width: 100%;
+      gap: 24px;
+    }
+  }
+
+  .descriptionBlock {
+    width: 37.5%;
+
+    @media (max-width: 1160px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    flex-direction: column;
+    flex-flow: column-reverse;
+    align-items: center;
+  }
+}
+
+.plot {
+  max-width: 50%;
+}

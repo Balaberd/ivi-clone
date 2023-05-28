@@ -1,0 +1,24 @@
+@import "../../index.scss";
+
+.ratingIcon {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include set-font(24px, 28px, 700);
+
+  &_hight {
+    background-color: $color-beirut;
+  }
+
+  &_middle {
+    background-color: $color-rome;
+  }
+
+  &_low {
+    background-color: $color-mkb;
+  }
+}

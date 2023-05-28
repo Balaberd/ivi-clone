@@ -17,6 +17,9 @@ export const movieApi = createApi({
     getMovies: build.query<IMovie[], TMovieQueryParams>({
       query: (params) => `/${getQueryParam(params)}`,
     }),
+    getFilm: build.query<IMovie, number>({
+      query: (id) => `/film/${id}`,
+    }),
   }),
 });
 
@@ -24,4 +27,5 @@ export const {
   useGetMoviesPromoQuery,
   useGetTopMoviesQuery,
   useGetMoviesQuery,
+  useGetFilmQuery,
 } = movieApi;

@@ -1,0 +1,54 @@
+@import "./../../index.scss";
+
+.medalion {
+  width: 85px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  @media (max-width: 1160px) {
+    width: 90px;
+  }
+
+  @media (max-width: 650px) {
+    width: 72px;
+  }
+
+  &:hover {
+    .content {
+      border-color: rgba($color-sofia, $opacity-kurza);
+    }
+
+    .title {
+      color: $color-sofia;
+    }
+  }
+}
+
+.content {
+  width: 56px;
+  height: 56px;
+
+  overflow: hidden;
+
+  border: 6px solid rgba($color-sofia, $opacity-bana);
+  border-radius: 12px;
+
+  position: relative;
+
+  transition: 0.2s;
+}
+
+.title {
+  width: 90%;
+  text-align: center;
+  white-space: pre-wrap;
+
+  @include set-font(13px, 16px, 400);
+  color: rgba($color-sofia, $opacity-tesa);
+
+  transition: 0.2s;
+}

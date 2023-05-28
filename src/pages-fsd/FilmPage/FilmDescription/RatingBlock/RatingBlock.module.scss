@@ -1,0 +1,65 @@
+@import "./../../../../shared/index.scss";
+
+.ratingBlock {
+  width: 100%;
+
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-radius: 12px;
+  background-color: rgba($color-sofia, $opacity-jabe);
+
+  cursor: pointer;
+}
+
+.ratingIconWrapper {
+  height: 64px;
+  width: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: rgba($color-sofia, $opacity-hemza);
+  @include set-font(15px, 20px, 400);
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__title {
+      color: $color-sofia;
+      font-weight: 500;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+
+  .button {
+    padding: 3px 7px;
+
+    @include set-font(13px, 16px, 500);
+    color: $color-sofia;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba($color-sofia, $opacity-kurza);
+
+    cursor: pointer;
+    transition: 0.2;
+
+    &:hover {
+      border-color: rgba($color-sofia, $opacity-anie);
+    }
+  }
+}

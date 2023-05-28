@@ -9,3 +9,8 @@ export { SliderButtons } from "./ui/SliderButtons/SliderButtons";
 export { Checkbox } from "./ui/Checkbox/Checkbox";
 export { Radio } from "./ui/Radio/Radio";
 export { Input } from "./ui/Input/Input";
+export { RatingIcon } from "./ui/RatingIcon/RatingIcon";
+export { Medalion } from "./ui/Medalion/Medalion";
+
+export { plural } from "./helpers/plural";
+export { formatNumber } from "./helpers/formatNumber";
