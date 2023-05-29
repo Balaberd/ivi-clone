@@ -48,6 +48,7 @@ export const FilmDescription: FC<Props> = ({
 
     <ActorsBlock
       rating={rating}
+      directorId={director.id}
       directorName={director.full_name}
       directorImageUrl={director.avatar}
       actors={actors}

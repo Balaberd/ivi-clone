@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Medalion, RatingIcon } from "@/shared";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ActorsBlock.module.scss";
 
 interface IActorItem {
@@ -15,6 +16,7 @@ interface IActorItem {
 
 interface Props {
   rating: number;
+  directorId: number;
   directorName: string;
   directorImageUrl: string;
   actors: Array<IActorItem>;
@@ -25,26 +27,31 @@ export const ActorsBlock: FC<Props> = ({
   directorName,
   directorImageUrl,
   actors,
+  directorId,
 }) => (
   <div className={styles.actorsBlock}>
     <Medalion
       content={<RatingIcon className={styles.ratingIcon} rating={rating} />}
       title="Рейтинг Иви"
     />
-    <Medalion
-      content={<Image fill src={directorImageUrl} />}
-      title={directorName}
-    />
+    <Link href={`/person/${directorId}`}>
+      <Medalion
+        content={<Image fill src={directorImageUrl} />}
+        title={directorName}
+      />
+    </Link>
+
     {actors.map((actor, index) => {
       if (index >= 3) {
         return null;
       }
       return (
-        <Medalion
-          key={actor.id}
-          content={<Image fill src={actor.avatar} />}
-          title={actor.full_name}
-        />
+        <Link href={`/person/${actor.id}`} key={actor.id}>
+          <Medalion
+            content={<Image fill src={actor.avatar} />}
+            title={actor.full_name}
+          />
+        </Link>
       );
     })}
   </div>

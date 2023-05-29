@@ -1,0 +1,19 @@
+@import "../../shared/index.scss";
+
+.personPage {
+  margin-top: 40px;
+  @extend %template-container;
+}
+
+.container {
+  @extend %template-container_little;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.filmCount {
+  color: rgba($color-sofia, $opacity-dere);
+  @include set-font(18px, 21px, 400);
+}

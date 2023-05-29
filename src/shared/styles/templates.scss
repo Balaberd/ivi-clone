@@ -4,6 +4,19 @@
   width: $width-container;
   margin: 0 auto;
 
+  @media (max-width: 1160px) {
+    width: 65%;
+  }
+
+  @media (max-width: 880px) {
+    width: 100%;
+  }
+}
+
+%template-container_little {
+  width: 596px;
+  margin: 0 auto;
+
   @media (max-width: $width-container) {
     width: 100%;
     padding: 0 32px;

@@ -10,7 +10,6 @@ export type TMovieQueryParams = {
 
 export type TPerson = {
   id: number;
-  // name: string;
   avatar: string;
   full_name: string;
   full_name_EN: string;
@@ -49,22 +48,3 @@ export interface IMovie {
   country: ICountry;
   posts?: Array<any>;
 }
-
-// OLD VERSION SAVE
-// export interface IMovie {
-//   id: number;
-//   avatars: string;
-//   name: string;
-//   original_name: string;
-//   rating: number;
-//   years: string;
-//   durations: string;
-//   country: TCountry;
-//   genre: TGenre;
-//   promo?: string;
-//   text: string;
-//   director_id: number;
-//   director: TPerson[];
-//   actors: TPerson[];
-//   ageLimit: TAgeLimit;
-// }

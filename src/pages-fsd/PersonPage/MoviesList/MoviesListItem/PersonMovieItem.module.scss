@@ -1,0 +1,54 @@
+@import "../../../../shared/index.scss";
+
+.moviesListItem {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  color: $color-sofia;
+
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 4px;
+}
+
+.descriptionBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 4px;
+
+  @include set-font(15px, 22px, 500);
+
+  .subtitle {
+    color: $color-axum;
+  }
+}
+
+.button {
+  padding: 9px 15px;
+  @include set-font(15px, 20px, 500);
+  @extend %template-link-button;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}

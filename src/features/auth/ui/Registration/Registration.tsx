@@ -101,22 +101,6 @@ export const Registration: FC<Props> = ({ isActive, onIsActiveToggle }) => {
       >
         Зарегистрироваться
       </button>
-      <div className={styles.buttonsBlock}>
-        <button
-          disabled={isSubmitButtonDisabled}
-          onClick={() => {}}
-          className={styles.button}
-        >
-          Googgle
-        </button>
-        <button
-          disabled={isSubmitButtonDisabled}
-          onClick={() => {}}
-          className={styles.button}
-        >
-          VK
-        </button>
-      </div>
     </div>
   );
 };

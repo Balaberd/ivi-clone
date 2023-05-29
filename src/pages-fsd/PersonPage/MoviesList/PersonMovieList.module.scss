@@ -1,0 +1,60 @@
+@import "../../../shared/index.scss";
+
+.moviesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleBlock {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  .title {
+    @include set-font(24px, 28px, 700);
+  }
+  .subtitle {
+    color: $color-axum;
+    @include set-font(15px, 20px, 400);
+  }
+}
+
+.controlBlock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid rgba($color-sofia, $opacity-bana);
+
+  .button {
+    @include set-font(15px, 20px, 500);
+    color: $color-sofia;
+    opacity: $opacity-hemza;
+    cursor: pointer;
+
+    position: relative;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: $opacity-imi;
+    }
+
+    &_active {
+      opacity: $opacity-imi;
+
+      &::before {
+        width: 100%;
+        position: absolute;
+        content: "";
+        top: 26px;
+        left: 0;
+        border-bottom: 7px solid $color-mkb;
+      }
+    }
+  }
+}
+
+.list {
+}

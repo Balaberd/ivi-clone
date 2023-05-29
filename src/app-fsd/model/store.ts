@@ -2,13 +2,15 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { filterSlice } from "@/entities";
 import { apiSlice } from "@/features/auth/model/auth.api";
 import { userSlice } from "@/features/user/model/userSlice";
+import { personApi } from "@/entities/person/model/person.api";
 import { movieApi } from "../../entities/movie/model/movie.api";
 
 const rootReducer = combineReducers({
   filter: filterSlice.reducer,
+  user: userSlice.reducer,
   [movieApi.reducerPath]: movieApi.reducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
-  user: userSlice.reducer,
+  [personApi.reducerPath]: personApi.reducer,
 });
 
 export const setupStore = () =>
@@ -17,6 +19,7 @@ export const setupStore = () =>
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
         .concat(movieApi.middleware)
+        .concat(personApi.middleware)
         .concat(apiSlice.middleware),
   });
 

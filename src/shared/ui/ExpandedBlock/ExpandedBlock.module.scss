@@ -4,6 +4,8 @@
   width: 100%;
   max-width: 906px;
 
+  color: $color-axum;
+
   & p {
     margin-top: 12px;
   }
@@ -20,10 +22,10 @@
 
 .title {
   @include set-font(20px, 24px, 700);
+  color: $color-sofia;
 }
 
 .content {
-  color: $color-axum;
   @include set-font(15px, 22px, 400);
 }
 

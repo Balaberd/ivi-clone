@@ -1,0 +1,28 @@
+@import "../../../shared/index.scss";
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.avatar {
+  width: 120px;
+  height: 144px;
+
+  border-radius: 16px;
+}
+
+.title {
+  @include set-font(56px, 56px, 700);
+  white-space: pre-wrap;
+}
+
+.subtitle {
+  @include set-font(15px, 22px, 400);
+  color: $color-axum;
+}
+
+.description {
+  color: $color-tbilisi;
+}
