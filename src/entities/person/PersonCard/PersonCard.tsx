@@ -13,11 +13,11 @@ interface Props {
   subtitle: string | number;
 }
 
-export const PersonCard: FC<Props> = ({ avatar, title, subtitle }) => {
+export const PersonCard: FC<Props> = ({ id, avatar, title, subtitle }) => {
   const isListElement = typeof subtitle === "number";
   const subtitleValue = isListElement ? howMuchMovies(subtitle) : `${subtitle}`;
   return (
-    <Link href={"{/person/id}"} className={styles.personCard}>
+    <Link href={`/person/${id}`} className={styles.personCard}>
       <Card
         title={title}
         subtitle={subtitleValue}
