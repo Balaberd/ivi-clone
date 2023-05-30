@@ -87,7 +87,7 @@ export const PersonMovieList: FC<Props> = ({
             avatar={movie.avatars}
             title={movie.name}
             rating={movie.rating}
-            year={+movie.years}
+            year={movie.years}
           />
         ))}
       </div>

@@ -8,7 +8,7 @@ interface Props {
   avatar: string;
   title: string;
   rating: number;
-  year: number;
+  year: string;
 }
 
 export const PersonMovieItem: FC<Props> = ({
